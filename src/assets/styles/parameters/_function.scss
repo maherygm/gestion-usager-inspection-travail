@@ -1,0 +1,20 @@
+// ---------------- Function ----------------
+@function margin($top, $right: null, $bottom: null, $left: null) {
+    // Si seul un argument est fourni, on applique la même valeur à toutes les marges
+    @if $right == null {
+      @return margin($top, $top, $top, $top);
+    }
+  
+    // Si seulement deux arguments sont fournis, on applique les valeurs aux marges verticales et horizontales
+    @if $bottom == null {
+      @return margin($top, $right, $top, $right);
+    }
+  
+    // Si tous les arguments sont fournis, on génère la propriété de marge
+    @return (
+      margin-top: $top,
+      margin-right: $right,
+      margin-bottom: $bottom,
+      margin-left: $left
+    );
+  }

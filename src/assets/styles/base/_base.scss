@@ -1,0 +1,53 @@
+/* Eds Normalize */
+@use "../abstracts/variables" as *;
+@use "../parameters/_mixins" as *;
+@use "../parameters/_function" as *;
+
+* {
+  @include default_normalize;
+  &::after {
+    @include default_normalize;
+  }
+  &::before {
+    @include default_normalize;
+  }
+  &::selection {
+    background-color: var(--primaryColor);
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--scrollColor);
+    border-radius: 4px;
+    opacity: 0.1;
+  }
+  &::-webkit-scrollbar-corner {
+    border-radius: 20px;
+  }
+  &::-webkit-scrollbar {
+    padding: 20px 0px;
+    background: var(--fillInput);
+    width: 6px;
+    &:hover {
+      background: var(--fillInput);
+      background: var(--fillInput);
+    }
+  }
+}
+.section-container {
+  margin-top: 100px;
+}
+
+body {
+  background-color: var(--backgroundColor);
+  background-image: var(--pointBackground);
+  background-size: cover;
+  overflow-x: hidden;
+  cursor: url("../../../assets/branding/img/Cursor_Dark_Line.png"), auto;
+  cursor: hidden;
+}
+
+body.modal {
+  overflow: hidden;
+}
+body.modal.Large {
+  overflow: hidden;
+}

@@ -1,0 +1,43 @@
+.speeche-bloc {
+  width: 100%;
+  button {
+    min-width: 200px;
+    padding: 20px;
+    height: 50px;
+    border-radius: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+    &:hover {
+      background-color: var(--primaryColor);
+      color: var(--darkFontColor);
+    }
+    .container-svg-btn {
+      position: relative;
+    }
+    .container-svg-btn.active::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      background-color: var(--primaryColor);
+
+      transition: scale 200mss ease-in-out;
+      animation: wave 500ms infinite alternate-reverse;
+      z-index: 0;
+      border-radius: 100%;
+    }
+
+    @keyframes wave {
+      0% {
+        scale: 0;
+      }
+      100% {
+        scale: 0.8;
+      }
+    }
+  }
+}

@@ -1,0 +1,323 @@
+@use '../parameters/_mixins' as *;
+
+// ---------------- NORMALIZE ----------------
+a{
+    text-decoration: none;
+   
+}
+
+button{
+    border: none;
+    outline: var(--primaryColor);
+}
+
+small{
+    opacity: .8;
+    font-size: 12px;
+}
+
+p{
+    font-size: 15px;
+}
+
+// ---------------- GLOBAL ----------------
+.super-container-global{
+    width: 100vw;
+    @include flex;
+}
+
+.super-navbar{
+    margin: 0px auto;
+    width: 90%;
+}
+
+.super-container-p90{
+    @include flex;
+    margin: 0px auto;
+    width: 90%;
+    max-width: 1200px;
+}
+
+.super-container-p80{
+    @include flex;
+    margin: 0px auto;
+    width: 80%;
+    max-width: 1200px;
+}
+
+.super-container-p70{
+    @include flex;
+    margin: 0px auto;
+    width: 70%;
+    max-width: 1200px;
+}
+
+// ---------------- CURRENT CLASSNAME ----------------
+.flex{
+    @include flex;
+}
+
+.flex-space-between{
+    @include flex-space-between;
+}
+
+.flex-space-between{
+    @include flex-space-around;
+}
+
+.side-50{
+    width: 50%;
+}
+
+.side-70{
+    width: 70%;
+}
+
+.side-30{
+    width: 30%;
+}
+
+.side-20{
+    width: 20%;
+}
+
+.box-shadow1{
+    box-shadow: 0px 7px 29px 0px rgba(100, 100, 111, 0.3);
+}
+
+.box-shadow2{
+    box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.8);
+}
+
+// ---------------- RESPONSIVE ---------------- 
+@media (max-width: 768px) {
+    .side-50{
+        width: 100%;
+
+        &.side-70{
+            width: 100%;
+        }
+
+        &.side-30{
+            width: 100%;
+        }
+    }
+
+    .super-container-p90{
+        flex-direction: column;
+    }
+    
+    .super-container-p80{
+        flex-direction: column;
+    }
+    
+    .super-container-p70{
+        flex-direction: column;
+    }
+}
+
+// ---------------- LOOP CLASSNAME ----------------
+// width viewport width 
+@for $wvw from 10 through 100{
+    .w-vw#{$wvw}{
+        width: 0vw + $wvw;
+        background-color: red
+    }
+};
+
+// width viewport height 
+@for $wvh from 10 through 100{
+    .h-vh#{$wvh}{
+        height: 0vh + $wvh;
+    }
+};
+
+// width pourcentage 
+@for $wp from 10 through 100{
+    .w-p#{$wp}{
+        width: 0% + $wp;
+    }
+};
+
+// height pourcentage 
+@for $hp from 10 through 100{
+    .h-p#{$hp}{
+        height: 0% + $hp;
+    }
+};
+
+// width pixels 
+@for $wpx from 10 through 1000{
+    .w-px#{$wpx}{
+        width: 0px + $wpx;
+    }
+};
+
+// height pixels 
+@for $hpx from 10 through 1000{
+    .h-px#{$hpx}{
+        height: 0px + $hpx;
+    }
+};
+
+// Pixel font size
+@for $textsize from 5 through 100{
+    .text-px#{$textsize}{
+        font-size: $textsize + px;
+    }
+};
+
+// Rem font size
+@for $textsize from 1 through 10{
+    .text-rem#{$textsize}{
+        font-size: $textsize + rem;
+    }
+};
+
+// Border radius pixels size
+@for $radius from 1 through 150{
+    .border-radius-#{$radius}{
+        border-radius: $radius + px;
+    }
+};
+
+// Border radius pourcentage size
+@for $radius from 1 through 150{
+
+    .border-radius-px#{$radius}{
+        border-radius: $radius + px;
+    }
+};
+
+@for $radius from 1 through 150{
+
+    .border-radius-p#{$radius}{
+        border-radius: $radius + "%";
+    }
+};
+
+// MARGIN
+@for $margin from 1 through 1000{
+    .marge-px#{$margin}{
+        margin: $margin + px;
+    }
+};
+
+@for $margin from 1 through 100{
+    .marge-p#{$margin}{
+        margin: $margin + "%";
+    }
+};
+
+// MARGIN PIXELS
+@for $margin from 1 through 1000{
+    .marge-top-px#{$margin}{
+        margin-top: $margin + px;
+    }
+};
+
+@for $margin from 1 through 1000{
+    .marge-bottom-px#{$margin}{
+        margin-bottom: $margin + px;
+    }
+};
+
+@for $margin from 1 through 1000{
+    .marge-right-px#{$margin}{
+        margin-right: $margin + px;
+    }
+};
+
+@for $margin from 1 through 1000{
+    .marge-left-px#{$margin}{
+        margin-left: $margin + px;
+    }
+};
+
+// MARGIN POURCENTAGE
+@for $margin from 1 through 100{
+    .marge-top-p#{$margin}{
+        margin-top: $margin + "%";
+    }
+};
+
+@for $margin from 1 through 100{
+    .marge-bottom-p#{$margin}{
+        margin-bottom: $margin + "%";
+    }
+};
+
+@for $margin from 1 through 100{
+    .marge-right-p#{$margin}{
+        margin-right: $margin + "%";
+    }
+};
+
+@for $margin from 1 through 100{
+    .marge-left-p#{$margin}{
+        margin-bottom: $margin + "%";
+    }
+};
+
+// PADDING
+@for $padding from 1 through 1000{
+    .pad-px#{$padding}{
+        padding: $padding + px;
+    }
+};
+
+@for $padding from 1 through 100{
+    .pade-p#{$padding}{
+        padding: $padding + "%";
+    }
+};
+
+// PADDING PIXELS
+@for $padding from 1 through 1000{
+    .pad-top-px#{$padding}{
+        padding-top: $padding + px;
+    }
+};
+
+@for $padding from 1 through 1000{
+    .pad-bottom-px#{$padding}{
+        padding-bottom: $padding + px;
+    }
+};
+
+@for $padding from 1 through 1000{
+    .pad-right-px#{$padding}{
+        padding-right: $padding + px;
+    }
+};
+
+@for $padding from 1 through 1000{
+    .pad-left-px#{$padding}{
+        padding-bottom: $padding + px;
+    }
+};
+
+// PADDING POURCENTAGE
+@for $padding from 1 through 1000{
+    .pad-top-p#{$padding}{
+        padding-top: $padding + "%";
+    }
+};
+
+@for $padding from 1 through 1000{
+    .pad-bottom-p#{$padding}{
+        padding-bottom: $padding + "%";
+    }
+};
+
+@for $padding from 1 through 1000{
+    .pad-right-p#{$padding}{
+        padding-right: $padding + "%";
+    }
+};
+
+@for $padding from 1 through 1000{
+    .pad-left-p#{$padding}{
+        padding-bottom: $padding + "%";
+    }
+};

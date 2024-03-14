@@ -1,0 +1,35 @@
+.button-annimate-container {
+  width: max-content;
+  padding: 13px 30px;
+  border-radius: 25px;
+  background-color: var(--primaryColor);
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+
+  .swipe {
+    width: 0%;
+    height: 100%;
+    background-color: var(--buttonHoverColor);
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: inherit;
+    transition: width 500ms ease-in-out;
+  }
+  &:hover .swipe {
+    width: 100%;
+    z-index: 1;
+  }
+  .title-containner {
+    position: relative;
+    z-index: 2;
+    color: var(--darkFontColor);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &:hover .title-containner {
+    color: var(--lightFontColor);
+  }
+}

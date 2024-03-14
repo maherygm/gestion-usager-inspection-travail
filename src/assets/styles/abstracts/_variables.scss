@@ -1,0 +1,125 @@
+:root {
+  /* principal color */
+  --primaryColor: #9034ff;
+  --secondaryColor: #101621;
+  --thirdColor: #101621;
+
+  --disabledColor: #7f7f7f;
+  --whiteColor: #ffffff;
+  --fillInput: #ffffff;
+  --greyColor: #e9ecf4;
+  --hoverColor: #f8f9fb;
+
+  --buttonHoverColor: rgb(29, 29, 29);
+
+  /* background */
+  --backgroundColor: #f4f4f4;
+
+  /* Transparent Color */
+  --whiteColorTransparent: rgba(255, 255, 255, 0.7);
+  --darkColorTransparent: rgba(0, 0, 0, 0.08);
+  --scrollColor: rgba(0, 0, 0, 0.3);
+
+  /* Font color */
+  --darkFontColor: #242424;
+  --lightFontColor: #ffffff;
+
+  /* Success color */
+  --succesColor: #1b9a22;
+  --darksuccesColor: #26822b;
+
+  /* Warning color */
+  --warningColor: #fea23c;
+  --darkwarningColor: rgb(196, 111, 0);
+
+  /* Danger color */
+  --dangerColor: #df0b0b;
+  --darkdangerColor: #ff2600;
+
+  /* linear color */
+  --linearColor1: linear-gradient(to right, #00aeef 0%, #9e61c1 100%);
+  --linearColor2: linear-gradient(to right, #1a90e8 10%, #f7b50e 100%);
+  --transitionColor: linear-gradient(
+    180deg,
+    rgba(247, 247, 247, 0) 0%,
+    rgba(247, 247, 247, 1) 100%
+  );
+  /* Supplement color */
+  --color1: #ffb000;
+  --color2: #d30074;
+  --color3: #e96e16;
+  --color4: #06b91e;
+
+  /* For blur background */
+  --blurcolor1: #dcaffa;
+  --blurcolor2: #7bbff7;
+  --blurcolor3: #99e29a;
+
+  /* Font family */
+  --DefaultFont: Poppins;
+  --TitleFont: Nexa;
+}
+
+.darktheme {
+  /* principal color */
+  --primaryColor: #9034ff;
+  --secondaryColor: #101621;
+  --thirdColor: #ffffff;
+
+  --disabledColor: #7f7f7f;
+  --whiteColor: #030239;
+  --fillInput: #101621;
+  --greyColor: #1c2638;
+  --hoverColor: rgba(255, 255, 255, 0.1);
+
+  --buttonHoverColor: #ffffff;
+
+  /* background */
+  --backgroundColor: #090d14;
+
+  /* Transparent Color */
+  --whiteColorTransparent: rgba(255, 255, 255, 0.05);
+  --darkColorTransparent: rgba(255, 255, 255, 0.06);
+  --scrollColor: rgba(255, 255, 255, 0.368);
+
+  /* Font color */
+  --darkFontColor: #ffffff;
+  --lightFontColor: #101010;
+
+  /* Success color */
+  --succesColor: #1b9a22;
+  --darksuccesColor: #26822b;
+
+  /* Warning color */
+  --warningColor: #fea23c;
+  --darkwarningColor: rgb(196, 111, 0);
+
+  /* Danger color */
+  --dangerColor: #df0b0b;
+  --darkdangerColor: #ff2600;
+
+  /* linear color */
+  --linearColor1: linear-gradient(to right, #6162c1 0%, #00aeef 100%);
+  --linearColor2: linear-gradient(to right, #1a90e8 10%, #f7b50e 100%);
+  --transitionColor: linear-gradient(
+    180deg,
+    rgba(9, 13, 20, 0) 0%,
+    rgba(9, 13, 20, 1) 100%
+  );
+
+  /* Supplement color */
+  --color1: #ffb000;
+  --color2: #d30074;
+  --color3: #e96e16;
+  --color4: #06b91e;
+
+  /* For blur background */
+  --blurcolor1: #cb8df5;
+  --blurcolor2: #63adeb;
+  --blurcolor3: #99e29a;
+
+  /* Font family */
+  // font-family: 'Epilogue', sans-serif;
+  --DefaultFont: Poppins;
+  --TitleFont: Nexa;
+}

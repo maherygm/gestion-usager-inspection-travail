@@ -1,0 +1,33 @@
+@mixin default_normalize{
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+	scroll-behavior: smooth;
+	scroll-timeline: 8s;
+	font-family: var(--DefaultFont);
+	transition: .1s ease-in-out;
+	outline: var(--primaryColor);
+};
+
+@mixin flex{
+    display: flex;
+    align-items: center;
+};
+
+@mixin flex-space-between{
+    display: flex;
+    align-items: center;
+    justify-content: space-between
+};
+
+@mixin flex-space-around{
+    display: flex;
+    align-items: center;
+    justify-content: space-around
+};
+
+@mixin flex-space-center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+};
