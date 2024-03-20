@@ -1,4 +1,10 @@
-import React, { Suspense, lazy, useRef } from "react";
+import React, {
+  Suspense,
+  lazy,
+  useEffect,
+  useLayoutEffect,
+  useRef,
+} from "react";
 import "./__banner.scss";
 import ButtonAnnimate from "../../../../components/ui/button/ButtonAnnimate";
 import { ArrowForward } from "@mui/icons-material";
@@ -7,6 +13,7 @@ import { easing } from "maath";
 import { Bureau } from "../../components/model/Bureau";
 import { OrbitControls } from "@react-three/drei";
 import Particules from "../../../../components/Particules";
+import gsap from "gsap";
 function Rig() {
   return useFrame((state, delta) => {
     easing.damp3(
@@ -17,13 +24,32 @@ function Rig() {
     );
   });
 }
+
 const Banner = () => {
+  function annimation(params) {
+    gsap.fromTo(
+      ".title-annimation-banner",
+      {
+        opacity: 0,
+        x: -200,
+      },
+      {
+        opacity: 1,
+        delay: 2,
+        x: 0,
+        stagger: 0.2,
+      }
+    );
+  }
+  useEffect(() => annimation(), []);
   return (
     <div className="banner-main-containner">
       <div className="second-containner">
         <div className="title-banner">
-          <h1>UnLeash the Full potential of AI</h1>
-          <p>
+          <h1 className="title-annimation-banner">
+            UnLeash the Full potential of AI
+          </h1>
+          <p className="title-annimation-banner">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas
             maiores, possimus debitis commodi esse laboriosam ullam labore culpa
             doloremque at nesciunt reprehenderit molestias quia tempore!
@@ -31,7 +57,7 @@ const Banner = () => {
             nisi aperiam odit animi optio recusandae asperiores ad.
           </p>
 
-          <div className="action-containner">
+          <div className="action-containner title-annimation-banner">
             <ButtonAnnimate
               title={"Get the App"}
               component={<ArrowForward />}

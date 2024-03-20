@@ -1,0 +1,42 @@
+.Card-activitie-container {
+  width: 400px;
+  height: 350px;
+  background-color: crimson;
+  border-radius: 30px;
+  overflow: hidden;
+  .image-container {
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+
+    .blur-component {
+      width: 100%;
+      height: 100%;
+      transition: background-color 1.2s ease-in-out;
+      transition: backdrop-filter 1s ease-in-out;
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.509);
+        backdrop-filter: blur(2px);
+      }
+
+      .title-card {
+        opacity: 0;
+        transition: opacity 500ms ease-in-out;
+        h3 {
+          font-size: 32px;
+          color: white;
+        }
+        p {
+          color: white;
+        }
+      }
+
+      &:hover .title-card {
+        opacity: 1;
+      }
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}

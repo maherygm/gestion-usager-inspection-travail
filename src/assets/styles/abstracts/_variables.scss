@@ -4,7 +4,18 @@
   --secondaryColor: #101621;
   --thirdColor: #101621;
 
-  --disabledColor: #7f7f7f;
+  --primaryColor-alpha-09: rgba(143, 52, 255, 0.9);
+  --primaryColor-alpha-08: rgba(143, 52, 255, 0.8);
+  --primaryColor-alpha-07: #8f34ffb3;
+  --primaryColor-alpha-06: rgba(143, 52, 255, 0.6);
+  --primaryColor-alpha-05: rgba(143, 52, 255, 0.5);
+  --primaryColor-alpha-04: rgba(143, 52, 255, 0.4);
+  --primaryColor-alpha-03: #8f34ff4d;
+  --primaryColor-alpha-02: rgba(143, 52, 255, 0.2);
+  --primaryColor-alpha-01: rgba(143, 52, 255, 0.1);
+  --primaryColor-alpha-005: #8f34ff0d;
+  --primaryColor-alpha-002: rgba(143, 52, 255, 0.02);
+
   --whiteColor: #ffffff;
   --fillInput: #ffffff;
   --greyColor: #e9ecf4;
@@ -58,6 +69,18 @@
   /* Font family */
   --DefaultFont: Poppins;
   --TitleFont: Nexa;
+
+  --fds-black: black;
+  --fds-white: #ffffff;
+  --fds: black;
+  --fds-alpha-05: rgba(255, 255, 255, 0.05);
+  --fds-alpha-10: rgba(255, 255, 255, 0.1);
+  --fds-alpha-20: rgba(255, 255, 255, 0.2);
+  --fds-alpha-30: rgba(255, 255, 255, 0.3);
+  --fds-alpha-40: rgba(255, 255, 255, 0.4);
+  --fds-alpha-50: rgba(255, 255, 255, 0.5);
+  --fds-alpha-60: rgba(255, 255, 255, 0.6);
+  --fds-alpha-80: rgba(255, 255, 255, 0.8);
 }
 
 .darktheme {
@@ -122,4 +145,17 @@
   // font-family: 'Epilogue', sans-serif;
   --DefaultFont: Poppins;
   --TitleFont: Nexa;
+
+  --fds-black: black;
+  --fds-white: #ffffff;
+  --fds: rgb(255, 255, 255);
+  --fds-alpha-05: rgba(0, 0, 0, 0.05);
+  --fds-alpha-10: rgba(0, 0, 0, 0.1);
+  --fds-alpha-15: rgba(0, 0, 0, 0.15);
+  --fds-alpha-20: rgba(0, 0, 0, 0.2);
+  --fds-alpha-30: rgba(0, 0, 0, 0.3);
+  --fds-alpha-40: rgba(0, 0, 0, 0.4);
+  --fds-alpha-50: rgba(0, 0, 0, 0.5);
+  --fds-alpha-60: rgba(0, 0, 0, 0.6);
+  --fds-alpha-80: rgba(0, 0, 0, 0.8);
 }

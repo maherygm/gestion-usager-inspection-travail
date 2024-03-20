@@ -1,0 +1,43 @@
+.activitie-super-container {
+  color: var(--darkFontColor);
+  background: url("../../../../assets/branding/img/banner_bg.png");
+  height: 100%;
+  padding-top: 90px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  .activitie-title {
+    h1 {
+      font-size: 52px;
+      padding-left: 240px;
+    }
+  }
+  .button-caontainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+  }
+  .list {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+    .card-activitie {
+      width: min-content;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      .fotter-list {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        h3 {
+          font-size: 32px;
+        }
+      }
+    }
+  }
+}

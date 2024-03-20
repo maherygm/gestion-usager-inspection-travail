@@ -2,6 +2,7 @@ import React from "react";
 import "./navbar.scss";
 import SwitchMode from "../../../../components/ui/switchMode/switchMode";
 import ButtonAnnimate from "../../../../components/ui/button/ButtonAnnimate";
+import { NavLink } from "react-router-dom";
 const NavBar = () => {
   return (
     <div className="nav-bar-main-containner ">
@@ -18,7 +19,9 @@ const NavBar = () => {
       </div>
       <div className="action-containner">
         <SwitchMode />
-        <ButtonAnnimate title={"sign In"} />
+        <NavLink to={"/sign/signin"}>
+          <ButtonAnnimate title={"sign In"} />
+        </NavLink>
       </div>
     </div>
   );

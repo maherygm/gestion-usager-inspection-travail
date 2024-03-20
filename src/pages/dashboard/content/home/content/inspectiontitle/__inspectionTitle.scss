@@ -1,0 +1,25 @@
+.main-container-ins-title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  gap: 20px;
+
+  .image-inspection {
+    width: 150px;
+    height: 150px;
+    border-radius: 100%;
+    overflow: hidden;
+
+    img {
+      fill: var(--primaryColor);
+    }
+  }
+  .tiitle {
+    p {
+      font-size: 32px;
+      color: var(--darkFontColor);
+    }
+  }
+}
