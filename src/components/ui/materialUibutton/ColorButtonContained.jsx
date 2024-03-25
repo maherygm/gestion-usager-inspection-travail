@@ -6,7 +6,7 @@ const ColorButtonContained = styled(Button)(({ theme }) => ({
   backgroundColor: "var(--primaryColor-alpha-09)",
   textTransform: "capitalize",
   "&:hover": {
-    backgroundColor: "var(--primaryColor)",
+    backgroundColor: "#9034ff",
   },
 }));
 

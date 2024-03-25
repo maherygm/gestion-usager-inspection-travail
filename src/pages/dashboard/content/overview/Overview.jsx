@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./__overview.scss";
 import LineChart from "./content/lineChart/LineChart";
 import HeatMap from "./content/heatmap/HeatMap";
@@ -17,12 +17,54 @@ import {
   ShowChart,
 } from "@mui/icons-material";
 import { useNavigate } from "react-router-dom";
+import gsap from "gsap";
 const Overview = () => {
   const navigate = useNavigate();
 
   function handleNavigate() {
     navigate("/dashboard/home");
   }
+
+  //tonga de eto fotsiny ny donnee no ovaina sy ny logique
+  const dataRI = [50, 70, 20, 40, 10];
+  const dataDiff = [25, 90, 60, 40, 60];
+  const dataCT = [10, 50, 20, 40, 80];
+
+  const [dataBar, setdataBar] = useState([...dataRI]);
+
+  function annimate(params) {
+    for (let index = 0; index < dataBar.length; index++) {
+      gsap.to(`.blc-${index + 1}-chart-three`, {
+        height: `${dataBar[index]}%`,
+        delay: 0.5 + index * 0.1,
+        duration: 1,
+        ease: "power1.in",
+      });
+    }
+  }
+
+  const [activeElement, setactiveElement] = useState("ri");
+
+  function handleClickBarChange(element) {
+    switch (element) {
+      case "diff":
+        setactiveElement(element);
+        setdataBar([...dataDiff]);
+        break;
+      case "ri":
+        setactiveElement(element);
+        setdataBar([...dataRI]);
+        break;
+      case "ct":
+        setactiveElement(element);
+        setdataBar([...dataCT]);
+        break;
+      default:
+        break;
+    }
+  }
+
+  useEffect(() => annimate());
   return (
     <div className="main-container-overview">
       <div className="bloc">
@@ -34,14 +76,48 @@ const Overview = () => {
                 <p>Simple Representation</p>
               </div>
               <div className="second">
-                <div className="btn-one">
+                <div
+                  className={`btn-one ${
+                    activeElement === "diff" ? activeElement : ""
+                  }`}
+                  onClick={() => handleClickBarChange("diff")}
+                >
                   <p>Differend</p>
                 </div>
-                <div className="btn-one">Reglement Interieur</div>
-                <div className="btn-one">Contrat de travail</div>
+                <div
+                  className={`btn-one ${
+                    activeElement === "ri" ? activeElement : ""
+                  }`}
+                  onClick={() => handleClickBarChange("ri")}
+                >
+                  Reglement Interieur
+                </div>
+                <div
+                  className={`btn-one ${
+                    activeElement === "ct" ? activeElement : ""
+                  }`}
+                  onClick={() => handleClickBarChange("ct")}
+                >
+                  Contrat de travail
+                </div>
                 <IconButton>
                   <MoreHoriz />
                 </IconButton>
+              </div>
+            </div>
+            <div className="section-1-bloc-principale">
+              <div className="main-three-container">
+                <div className="chiffre">
+                  <h2>43 %</h2>
+                  <p> rating increase every week</p>
+                </div>
+                <div className="three-bloc">
+                  <div className="blc blc-1-chart-three"></div>
+                  <div className="blc blc-2-chart-three"></div>
+                  <div className="blc blc-3-chart-three"></div>
+                  <div className="blc blc-4-chart-three"></div>
+                  <div className="blc blc-5-chart-three"></div>
+                </div>
               </div>
             </div>
           </div>

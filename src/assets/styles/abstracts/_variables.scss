@@ -28,11 +28,12 @@
 
   /* Transparent Color */
   --whiteColorTransparent: rgba(255, 255, 255, 0.7);
+  --backColorTransparent: rgba(0, 0, 0, 0.05);
   --darkColorTransparent: rgba(0, 0, 0, 0.08);
   --scrollColor: rgba(0, 0, 0, 0.3);
 
   /* Font color */
-  --darkFontColor: #242424;
+  --darkFontColor: #494949;
   --lightFontColor: #ffffff;
 
   /* Success color */
@@ -89,19 +90,32 @@
   --secondaryColor: #101621;
   --thirdColor: #ffffff;
 
+  --primaryColor-alpha-09: rgba(143, 52, 255, 0.9);
+  --primaryColor-alpha-08: rgba(143, 52, 255, 0.8);
+  --primaryColor-alpha-07: #8f34ffb3;
+  --primaryColor-alpha-06: rgba(143, 52, 255, 0.6);
+  --primaryColor-alpha-05: rgba(143, 52, 255, 0.5);
+  --primaryColor-alpha-04: rgba(143, 52, 255, 0.4);
+  --primaryColor-alpha-03: #8f34ff4d;
+  --primaryColor-alpha-02: rgba(143, 52, 255, 0.2);
+  --primaryColor-alpha-01: rgba(143, 52, 255, 0.1);
+  --primaryColor-alpha-005: #8f34ff0d;
+  --primaryColor-alpha-002: rgba(143, 52, 255, 0.02);
+
   --disabledColor: #7f7f7f;
   --whiteColor: #030239;
-  --fillInput: #101621;
+  --fillInput: #2e3c53;
   --greyColor: #1c2638;
   --hoverColor: rgba(255, 255, 255, 0.1);
 
   --buttonHoverColor: #ffffff;
 
   /* background */
-  --backgroundColor: #090d14;
+  --backgroundColor: #172133;
 
   /* Transparent Color */
   --whiteColorTransparent: rgba(255, 255, 255, 0.05);
+  --backColorTransparent: rgba(255, 255, 255, 0.05);
   --darkColorTransparent: rgba(255, 255, 255, 0.06);
   --scrollColor: rgba(255, 255, 255, 0.368);
 

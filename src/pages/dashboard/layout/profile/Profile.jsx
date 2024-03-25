@@ -12,7 +12,7 @@ import {
   Slide,
 } from "@mui/material";
 
-import icons from "../../../../../../assets/branding/img/400x500/img30.jpg";
+import icons from "../../../../assets/branding/img/400x500/img30.jpg";
 import {
   Announcement,
   Help,
@@ -21,13 +21,13 @@ import {
   Settings,
 } from "@mui/icons-material";
 import styled from "styled-components";
-import ColorButtonText from "../../../../../../components/ui/materialUibutton/ColorButtonText";
-import ColorButtonContained from "../../../../../../components/ui/materialUibutton/ColorButtonContained";
-import SimpleButtonText from "../../../../../../components/ui/materialUibutton/SimpleButtonText";
+import ColorButtonText from "../../../../components/ui/materialUibutton/ColorButtonText";
+import ColorButtonContained from "../../../../components/ui/materialUibutton/ColorButtonContained";
+import SimpleButtonText from "../../../../components/ui/materialUibutton/SimpleButtonText";
 import { NavLink, useNavigate } from "react-router-dom";
 import Lottie from "lottie-react";
 
-import logoutannimation from "../../../../../../assets/lotties/logout.json";
+import logoutannimation from "../../../../assets/lotties/logout.json";
 
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;

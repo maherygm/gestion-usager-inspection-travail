@@ -1,0 +1,141 @@
+.main-bloc-add {
+  width: 60vw;
+  height: 80vh;
+  background-color: var(--fillInput);
+  color: var(--darkFontColor);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 10px;
+
+  display: flex;
+  flex-direction: column;
+
+  .dialog-footer {
+    height: 6%;
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 10px;
+  }
+  .dialog-body {
+    height: 93%;
+    gap: 10px;
+
+    display: flex;
+
+    .usage-list-container {
+      width: 60%;
+      height: 100%;
+
+      .search-container {
+        display: flex;
+        justify-content: space-between;
+        .action {
+          display: flex;
+          gap: 10px;
+          input {
+            background-color: var(--darkColorTransparent);
+            outline: none;
+            border: none;
+            color: var(--darkFontColor);
+            padding: 5px 10px;
+            border-radius: 10px;
+          }
+        }
+      }
+      .container-table {
+        width: 100%;
+        overflow-y: scroll;
+
+        table {
+          width: 100%;
+          border-collapse: separate;
+          border-spacing: 0px 10px;
+
+          thead {
+            background-color: var(--fillInput);
+            position: sticky;
+            top: 5px;
+            z-index: 19;
+            tr {
+              th {
+                text-align: start;
+              }
+            }
+          }
+          tbody {
+            tr {
+              td {
+                padding: 10px 5px;
+              }
+              &:hover {
+                background-color: var(--darkColorTransparent);
+              }
+            }
+            tr:nth-child(odd) {
+            }
+          }
+        }
+      }
+    }
+    .form-container {
+      width: 40%;
+      height: 100%;
+      form {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        color: var(--darkFontColor);
+
+        input {
+          width: 100%;
+          padding: 10px 15px;
+          border-radius: 10px;
+          border-color: var(--darkFontColor);
+          background-color: var(--fillInput);
+          color: var(--darkFontColor);
+
+          &::placeholder {
+            color: var(--disabledColor);
+          }
+        }
+        .nom {
+          width: 100%;
+        }
+        .prenom {
+          width: 100%;
+        }
+        .adresse {
+          width: 100%;
+        }
+        .select-group {
+          display: flex;
+          gap: 20px;
+        }
+        .description {
+          width: 100%;
+
+          textarea {
+            resize: none;
+            width: 100%;
+            height: 150px;
+            padding: 10px;
+            border-radius: 10px;
+            border-color: var(--darkFontColor);
+            background-color: var(--fillInput);
+            color: var(--darkFontColor);
+
+            &::placeholder {
+              color: var(--disabledColor);
+            }
+          }
+        }
+      }
+    }
+    .usage-list-container {
+    }
+  }
+}

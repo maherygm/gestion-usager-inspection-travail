@@ -14,7 +14,11 @@ import Activitie from "./content/activity/Activitie";
 
 const Main = () => {
   return (
-    <div>
+    <div
+      style={{
+        backgroundColor: "var(--backgroundColor)",
+      }}
+    >
       <Suspense fallback={null}>
         <NavBar />
         {/* <Fullpage>

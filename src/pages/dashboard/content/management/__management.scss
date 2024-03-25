@@ -1,0 +1,147 @@
+.main-container-management {
+  padding: 0px 10vw;
+  color: var(--darkFontColor);
+
+  .add-add-usager {
+    display: none;
+    position: absolute;
+    z-index: 100;
+    width: 100vw;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    .dark {
+      z-index: 101;
+      position: absolute;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(0, 0, 0, 0.342);
+    }
+    .component {
+      position: absolute;
+      right: 0;
+      width: 500px;
+      height: 100vh;
+      z-index: 102;
+      background-color: var(--fillInput);
+      transition: transform 500ms ease;
+      transform: translateX(100%);
+      padding: 10px;
+    }
+    &.open {
+      display: block;
+      .component {
+        transform: translateX(0);
+        transition: transform 500ms ease;
+        transition-delay: 2s;
+      }
+    }
+  }
+  .main-section-management {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    .add-container {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      h3 {
+        .icons {
+          color: var(--darkFontColor);
+        }
+      }
+      .button-container {
+        display: flex;
+        gap: 10px;
+      }
+
+      .add-action {
+        padding: 20px 0px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+    }
+
+    .search-container {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+
+      .search {
+        display: flex;
+        gap: 10px;
+
+        input {
+          width: 300px;
+          outline: none;
+          border: none;
+          padding: 5px 10px;
+          background-color: var(--fillInput);
+          border-radius: 10px;
+          color: var(--darkFontColor);
+        }
+      }
+    }
+    .list-dossier-container {
+      background-color: var(--fillInput);
+      height: 70vh;
+      border-radius: 10px;
+      overflow: hidden;
+
+      .list-ctn {
+        overflow-y: scroll;
+        overflow-x: hidden;
+        border-radius: inherit;
+        height: 100%;
+        table {
+          width: 100%;
+          position: relative;
+          padding: 5px 5px 10px 20px;
+          border-collapse: separate;
+          border-spacing: 0 20px;
+          thead {
+            position: sticky;
+            top: 0;
+            padding: 20px 0px;
+            z-index: 3;
+
+            height: 50px;
+            background-color: var(--fillInput);
+            tr {
+              th {
+                text-align: start;
+              }
+            }
+          }
+          tbody {
+            tr {
+              overflow: hidden;
+              transition: background 500ms ease-in-out;
+              td {
+                padding: 10px;
+
+                .icons {
+                  color: var(--darkFontColor);
+                }
+
+                .div,
+                div {
+                  display: inline-flex;
+                  margin: 0px 5px;
+                }
+              }
+              &:hover {
+                background-color: var(--backColorTransparent);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
