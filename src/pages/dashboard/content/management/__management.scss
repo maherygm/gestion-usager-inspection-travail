@@ -27,6 +27,75 @@
       transition: transform 500ms ease;
       transform: translateX(100%);
       padding: 10px;
+
+      .body-add-usager {
+        form {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 20px;
+          color: var(--darkFontColor);
+
+          input {
+            width: 100%;
+            padding: 10px 15px;
+            border-radius: 10px;
+            border-color: var(--darkFontColor);
+            background-color: var(--fillInput);
+            color: var(--darkFontColor);
+
+            &::placeholder {
+              color: var(--disabledColor);
+            }
+          }
+          .nom {
+            width: 100%;
+          }
+          .prenom {
+            width: 100%;
+          }
+          .adresse {
+            width: 100%;
+          }
+          .select-group {
+            display: flex;
+            gap: 20px;
+
+            .sexe {
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              height: 50px;
+              select {
+                border: none;
+                appearance: none;
+                padding: 10px 30px 10px 15px;
+                width: 100%;
+                background-color: white;
+                border: 1px solid var(--darkFontColor);
+                font-size: 20px;
+                border-radius: 10px;
+                color: #333;
+                cursor: pointer;
+                option {
+                  background-color: var(
+                    --backColorTransparent
+                  ); /* Couleur de fond des options */
+                  color: #333; /* Couleur du texte des options */
+                  font-size: 14px; /* Taille de la police des options */
+                  padding: 8px 12px; /* Espacement interne des options */
+                }
+              }
+            }
+          }
+          .action-container {
+            width: 100%;
+            display: flex;
+            gap: 10px;
+            padding: 20px;
+            justify-content: end;
+          }
+        }
+      }
     }
     &.open {
       display: block;
