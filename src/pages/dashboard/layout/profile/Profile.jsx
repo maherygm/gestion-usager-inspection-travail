@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./__profile.scss";
 import {
   Avatar,
@@ -47,6 +47,7 @@ const Profile = ({ profileName, profileIcons, notification }) => {
 
   const handleChangeRoute = () => {
     handleClose();
+    sessionStorage.setItem("connnectedUser", "");
     setTimeout(() => navigate("/"), 2000);
   };
 
@@ -62,17 +63,64 @@ const Profile = ({ profileName, profileIcons, notification }) => {
   function annimate(params) {
     lottieRef.current.play();
   }
+
+  const [userConnected, setUserConnected] = useState({
+    utilisateur: {
+      fonction: {
+        poste: "Développeur",
+        typeUtilisateur: "",
+      },
+      image: {
+        data: "base64-encoded-image-data",
+        contentType: icons,
+      },
+      nom: "",
+      prenom: "",
+      email: "",
+      dateNaissance: "Thu Aug 20 1987 14:10:00 GMT+0300",
+      motsDePasse: "root",
+    },
+  });
+
+  useEffect(() => {
+    let user = JSON.parse(sessionStorage.getItem("connnectedUser"));
+
+    setUserConnected({
+      ...user,
+    });
+  }, []);
+
+  useEffect(() => {
+    console.log(userConnected);
+  }, [userConnected]);
+
   return (
     <>
       <div className="main-container-profile">
-        <p>{profileName ? profileName : "Rakotomalala Jean Mahery"}</p>
+        <p
+          style={{
+            minWidth: "100px",
+          }}
+        >
+          {userConnected
+            ? userConnected.utilisateur.nom +
+              " " +
+              userConnected.utilisateur.prenom
+            : "Rakotomalala Jean Mahery"}
+        </p>
         <div className="img">
           <IconButton onClick={handleCickOpenPoper}>
             <Badge
               badgeContent={notification ? notification : 4}
               color="secondary"
             >
-              <Avatar src={profileIcons ? profileIcons : icons} />
+              <Avatar
+                src={
+                  userConnected.utilisateur.image.contentType
+                    ? userConnected.utilisateur.image.contentType
+                    : ""
+                }
+              />
             </Badge>
           </IconButton>
 
@@ -82,10 +130,22 @@ const Profile = ({ profileName, profileIcons, notification }) => {
                 <div className="header-poper">
                   <Avatar
                     sx={{ width: 64, height: 64 }}
-                    src={profileIcons ? profileIcons : icons}
+                    src={
+                      userConnected.utilisateur.image.contentType
+                        ? userConnected.utilisateur.image.contentType
+                        : ""
+                    }
                   />
-                  <p>
-                    {profileName ? profileName : "Rakotomalala Jean Mahery"}
+                  <p
+                    style={{
+                      minWidth: "100px",
+                    }}
+                  >
+                    {userConnected
+                      ? userConnected.utilisateur.nom +
+                        " " +
+                        userConnected.utilisateur.prenom
+                      : "Rakotomalala Jean Mahery"}
                   </p>
                 </div>
                 <hr />

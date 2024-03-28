@@ -18,6 +18,9 @@ import {
 } from "@mui/icons-material";
 import { useNavigate } from "react-router-dom";
 import gsap from "gsap";
+import moment from "moment/moment";
+
+import "moment/locale/fr";
 const Overview = () => {
   const navigate = useNavigate();
 
@@ -65,6 +68,46 @@ const Overview = () => {
   }
 
   useEffect(() => annimate());
+
+  const [userConnected, setUserConnected] = useState({
+    utilisateur: {
+      fonction: {
+        poste: "Développeur",
+        typeUtilisateur: "",
+      },
+      image: {
+        data: "base64-encoded-image-data",
+        contentType: "",
+      },
+      nom: "",
+      prenom: "",
+      email: "",
+      dateNaissance: "Thu Aug 20 1987 14:10:00 GMT+0300",
+      motsDePasse: "root",
+    },
+  });
+
+  useEffect(() => {
+    let user = JSON.parse(sessionStorage.getItem("connnectedUser"));
+    setDateNow(moment().locale("fr").format("LLLL"));
+    setUserConnected({
+      ...user,
+    });
+
+    changeDate();
+  }, []);
+
+  const [dateNow, setDateNow] = useState();
+
+  function changeDate(params) {
+    moment().locale("fr").format("LLLL");
+
+    console.log(moment.locale("fr"));
+  }
+
+  setInterval(() => {
+    setDateNow(moment().locale("fr").format("LLLL"));
+  }, 20000);
   return (
     <div className="main-container-overview">
       <div className="bloc">
@@ -151,7 +194,7 @@ const Overview = () => {
               <div className="el-action date-container">
                 <div className="date">
                   <div className="content Date">
-                    <p>Lundi 27 mars 2024</p>
+                    <p>{dateNow ? dateNow : "mercredi 27 mars 2024 21:01"}</p>
                   </div>
                   <IconButton className="icons-btn">
                     <Notifications className="icons" />
@@ -166,7 +209,14 @@ const Overview = () => {
                   <Settings className="icons" />
                 </IconButton>
                 <IconButton>
-                  <Avatar src={img2} className="icons" />
+                  <Avatar
+                    src={
+                      userConnected.utilisateur.image.contentType
+                        ? userConnected.utilisateur.image.contentType
+                        : ""
+                    }
+                    className="icons"
+                  />
                 </IconButton>
               </div>
             </div>
