@@ -1,6 +1,7 @@
 import { React, Suspense, lazy } from "react";
 import { Route, Routes } from "react-router-dom";
 import { checkmode } from "../../utils/helpers/mode/checkmode";
+import { ToastContainer } from "react-toastify";
 
 const __main__ = lazy(() => import("../../pages/main/Main"));
 
@@ -45,6 +46,7 @@ const RouteConfig = () => {
     <Suspense fallback={<__LOADER__ />}>
       <Routes>
         {/* home routes   */}
+
         <Route path="/" element={<__main__ />} />
 
         {/* Dashboard */}

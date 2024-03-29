@@ -1,6 +1,7 @@
 .main-container-management {
-  padding: 0px 10vw;
+  padding: 0px 5vw;
   color: var(--darkFontColor);
+  width: 100vw;
 
   .add-add-usager {
     display: none;
@@ -183,7 +184,9 @@
             background-color: var(--fillInput);
             tr {
               th {
+                padding: 10px 0px 10px 20px;
                 text-align: start;
+                color: var(--darkFontColor);
               }
             }
           }

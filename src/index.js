@@ -23,6 +23,7 @@ import { configureStore } from "@reduxjs/toolkit";
 import rootReducer from "./config/redux/reducers/index";
 
 import { getDossier } from "./config/redux/actions/dossier.action";
+import { ToastContainer } from "react-toastify";
 
 const store = configureStore({
   reducer: rootReducer,
@@ -35,6 +36,7 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
   <Provider store={store}>
+    <ToastContainer />
     <BrowserRouter>
       <RouteConfig />
     </BrowserRouter>

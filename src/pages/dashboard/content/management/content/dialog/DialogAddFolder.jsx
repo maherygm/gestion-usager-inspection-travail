@@ -11,6 +11,12 @@ import "./__dialogAddFolder.scss";
 import { Search } from "@mui/icons-material";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { getUsager } from "../../../../../../services/backend/usagerService";
+import Card from "./content/Card";
+import { useDispatch } from "react-redux";
+
+import { addDossier } from "../../../../../../config/redux/actions/dossier.action";
+import { toast } from "react-toastify";
 const DialogAddNewFolder = ({ open, handleClose }) => {
   const [usagers, setusagers] = useState([]);
 
@@ -26,31 +32,86 @@ const DialogAddNewFolder = ({ open, handleClose }) => {
   function handleClickUsager(params) {
     const usCopy = usagers.filter((usg) => usg._id === params);
 
-    setusgVal(usCopy[0]);
-  }
-
-  function getusagers(params) {
-    let config = {
-      method: "get",
-      maxBodyLength: Infinity,
-      url: "http://localhost:4000/api/usager",
-      headers: {
-        "Content-Type": "application/json",
+    // setusgVal(usCopy[0]);
+    setSlide(true);
+    setDossierData({
+      dossier: {
+        ...dossierData.dossier,
+        usager: {
+          ...usCopy[0].usager,
+        },
       },
-    };
-
-    axios
-      .request(config)
-      .then((response) => {
-        setusagers([...response.data]);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    });
   }
+
+  const [slide, setSlide] = useState(false);
+
   useEffect(() => {
-    getusagers();
+    setSlide(false);
+    const PromiseUsager = getUsager();
+
+    PromiseUsager.then((response) => {
+      setusagers([...response]);
+    }).catch((error) => {
+      console.log("error here" + error);
+    });
   }, [open]);
+
+  const [dossierData, setDossierData] = useState({
+    dossier: {
+      usager: {
+        nom: "",
+        prenom: "",
+        adresse: "",
+        sexe: "",
+      },
+      description: "",
+      date: "" + new Date(),
+      etats: "en cours",
+      types: "contrat de travail",
+    },
+  });
+  const notifySuccess = (message) =>
+    toast.success(message, {
+      position: "top-center",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      draggable: true,
+      progress: undefined,
+      theme: "colored",
+    });
+  const notifyErr = (message) =>
+    toast.error(message, {
+      position: "top-center",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      draggable: true,
+      progress: undefined,
+      theme: "colored",
+    });
+
+  const dispatch = useDispatch();
+  function handleSubmitAddDossier(params) {
+    dispatch(addDossier(dossierData));
+    notifySuccess("Ajouts du dossier Reussis");
+    setDossierData({
+      dossier: {
+        usager: {
+          nom: "",
+          prenom: "",
+          adresse: "",
+          sexe: "",
+        },
+        description: "",
+        date: "" + new Date(),
+        etats: "en cours",
+        types: "differend",
+      },
+    });
+    handleClose();
+  }
 
   return (
     <div>
@@ -69,7 +130,7 @@ const DialogAddNewFolder = ({ open, handleClose }) => {
           <div className="dialog-header">
             <h1>Nouveu dossier</h1>
           </div>
-          <div className="dialog-body">
+          <div className={`dialog-body ${slide ? "active" : ""}`}>
             <div className="usage-list-container">
               <div className="search-container">
                 <h3>List Usager</h3>
@@ -81,61 +142,120 @@ const DialogAddNewFolder = ({ open, handleClose }) => {
                 </div>
               </div>
               <div className="container-table">
-                <table>
-                  <thead>
-                    <tr>
-                      <th>Nom</th>
-                      <th>Prenom</th>
-                      <th>Adresse</th>
-                      <th>Sexe</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {usagers.map((usg) => (
-                      <tr
-                        key={usg._id}
-                        onClick={() => handleClickUsager(usg._id)}
-                      >
-                        <td>{usg.usager.nom}</td>
-                        <td>{usg.usager.prenom}</td>
-                        <td>{usg.usager.adresse}</td>
-                        <td>{usg.usager.sexe}</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
+                {usagers.map((usg) => (
+                  <div key={usg._id} onClick={() => handleClickUsager(usg._id)}>
+                    <Card usager={usg.usager} />
+                  </div>
+                ))}
               </div>
             </div>
             <div className="form-container">
               <form action="">
                 <div className="nom">
                   <label htmlFor="">Nom </label>
-                  <input value={usgVal.usager.nom} placeholder="nom" />
+                  <input
+                    onChange={(e) =>
+                      setDossierData({
+                        dossier: {
+                          ...dossierData.dossier,
+                          usager: {
+                            ...dossierData.dossier.usager,
+                            nom: e.target.value,
+                          },
+                          date: "" + new Date(),
+                          etats: "en cours",
+                        },
+                      })
+                    }
+                    value={dossierData.dossier.usager.nom}
+                    placeholder="nom"
+                  />
                 </div>
                 <div className="prenom">
                   <label htmlFor="">Prenom </label>
-                  <input value={usgVal.usager.prenom} placeholder="prenom" />
+                  <input
+                    onChange={(e) =>
+                      setDossierData({
+                        dossier: {
+                          ...dossierData.dossier,
+                          usager: {
+                            ...dossierData.dossier.usager,
+                            prenom: e.target.value,
+                          },
+                          date: "" + new Date(),
+                          etats: "en cours",
+                        },
+                      })
+                    }
+                    value={dossierData.dossier.usager.prenom}
+                    placeholder="prenom"
+                  />
                 </div>
                 <div className="adresse">
                   <label htmlFor="">Adresse </label>
-                  <input value={usgVal.usager.adresse} placeholder="adresse" />
+                  <input
+                    onChange={(e) =>
+                      setDossierData({
+                        dossier: {
+                          ...dossierData.dossier,
+                          usager: {
+                            ...dossierData.dossier.usager,
+                            adresse: e.target.value,
+                          },
+                          date: "" + new Date(),
+                          etats: "en cours",
+                        },
+                      })
+                    }
+                    value={dossierData.dossier.usager.adresse}
+                    placeholder="adresse"
+                  />
                 </div>
                 <div className="select-group">
                   <div className="sexe">
                     <label htmlFor="">Sexe </label>
-                    <select value={usgVal.usager.sexe}>
+                    <select
+                      onChange={(e) =>
+                        setDossierData({
+                          dossier: {
+                            ...dossierData.dossier,
+                            usager: {
+                              ...dossierData.dossier.usager,
+                              sexe: e.target.value,
+                            },
+                            date: "" + new Date(),
+                            etats: "en cours",
+                          },
+                        })
+                      }
+                      value={dossierData.dossier.usager.sexe}
+                    >
                       <option value="Homme">Homme</option>
                       <option value="Femme">Femme</option>
                     </select>
                   </div>
                   <div className="types">
                     <label htmlFor="">Types </label>
-                    <select type="text" name="types">
-                      <option value="Differend">Differend</option>
-                      <option value="COntrat de Travail">
+                    <select
+                      onChange={(e) =>
+                        setDossierData({
+                          dossier: {
+                            ...dossierData.dossier,
+                            date: "" + new Date(),
+                            etats: "en cours",
+                            types: e.target.value,
+                          },
+                        })
+                      }
+                      value={dossierData.dossier.types}
+                      type="text"
+                      name="types"
+                    >
+                      <option value="differend">Differend</option>
+                      <option value="contrat de travail">
                         Contrat de travail
                       </option>
-                      <option value="Reglement Interieur">
+                      <option value="reglement interieur">
                         Reglement Interieur
                       </option>
                     </select>
@@ -143,14 +263,41 @@ const DialogAddNewFolder = ({ open, handleClose }) => {
                 </div>
                 <div className="description">
                   <label htmlFor="">Description</label>
-                  <textarea placeholder="Description" />
+                  <textarea
+                    onChange={(e) =>
+                      setDossierData({
+                        dossier: {
+                          ...dossierData.dossier,
+                          description: e.target.value,
+                          date: "" + new Date(),
+                          etats: "en cours",
+                        },
+                      })
+                    }
+                    value={dossierData.dossier.description}
+                    placeholder="Description"
+                  />
                 </div>
               </form>
             </div>
           </div>
           <div className="dialog-footer">
-            <SimpleButtonText onClick={handleClose}>annuler</SimpleButtonText>
-            <ColorButtonContained>confirmer</ColorButtonContained>
+            {slide ? (
+              <SimpleButtonText onClick={() => setSlide(false)}>
+                revenir
+              </SimpleButtonText>
+            ) : (
+              <SimpleButtonText onClick={handleClose}>annuler</SimpleButtonText>
+            )}
+            {!slide ? (
+              <ColorButtonContained onClick={() => setSlide(true)}>
+                Suivant
+              </ColorButtonContained>
+            ) : (
+              <ColorButtonContained onClick={handleSubmitAddDossier}>
+                confirmer
+              </ColorButtonContained>
+            )}
           </div>
         </div>
       </Modal>

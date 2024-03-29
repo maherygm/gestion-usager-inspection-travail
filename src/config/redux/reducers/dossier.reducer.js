@@ -16,7 +16,7 @@ export default function dossierReducer(state = initialState, action) {
       return action.payLoad;
 
     case ADD_DOSSIERS:
-      return [action.payLoad, ...state];
+      return [...state, action.payLoad];
 
     case EDIT_DOSSIERS:
       return state.map((dossier) => {

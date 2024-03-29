@@ -2,6 +2,7 @@ import { Avatar, Modal } from "@mui/material";
 import React from "react";
 import "./__details.scss";
 import SimpleButtonText from "../../../../../../components/ui/materialUibutton/SimpleButtonText";
+import moment from "moment";
 const Details = ({ open, handleClose, details }) => {
   return (
     <Modal
@@ -25,17 +26,23 @@ const Details = ({ open, handleClose, details }) => {
               }}
             ></Avatar>
 
-            <h1>{details.usageName}</h1>
+            <h1>
+              {details.dossier.usager.nom + " " + details.dossier.usager.prenom}
+            </h1>
+            <h4>
+              {" Etats du dossiers : "}
+              <SimpleButtonText>{details.dossier.etats}</SimpleButtonText>
+            </h4>
           </div>
           <hR></hR>
-          <h4>Date du {details.dates}</h4>
+          <h4>Date du {moment.utc(details.dossier.date).format("lll")}</h4>
           <h4>
             {" Types du dossiers : "}
-            <SimpleButtonText>{details.type}</SimpleButtonText>
+            <SimpleButtonText>{details.dossier.types}</SimpleButtonText>
           </h4>
 
           <h5>Objets du dossiers</h5>
-          <p>{details.desc}</p>
+          <p>{details.dossier.description}</p>
         </div>
       </div>
     </Modal>

@@ -76,7 +76,6 @@ const SignIn = () => {
         transition="Bounce"
       /> */}
 
-      <ToastContainer />
       <div className="back-btn">
         <NavLink className="nav-link" to={"/"}>
           <IconButton className="icons-btn">

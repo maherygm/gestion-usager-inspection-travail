@@ -21,6 +21,7 @@ export function authentification(emails, mdp) {
     } else {
       return {
         valide: false,
+        data: null,
       };
     }
   });
@@ -37,8 +38,8 @@ export async function getUtilisateur() {
     });
   return res;
 }
-export function getOneUtilisateur(id) {
-  return axios
+export async function getOneUtilisateur(id) {
+  return await axios
     .get(`${URLS}/utilisateur/${id}`)
     .then((res) => {
       return res.data.response;
@@ -47,8 +48,8 @@ export function getOneUtilisateur(id) {
       console.error("front end error  getOneUtilisateur", err);
     });
 }
-export function deleteUtilisateur(id) {
-  return axios
+export async function deleteUtilisateur(id) {
+  return await axios
     .delete(`${URLS}/utilisateur/${id}`)
     .then((res) => {
       return res.data;
@@ -57,8 +58,8 @@ export function deleteUtilisateur(id) {
       console.error("front end error deleteUtilisateur", err);
     });
 }
-export function modificationUtilisateur(utilisateur, id) {
-  return axios
+export async function modificationUtilisateur(utilisateur, id) {
+  return await axios
     .put(`${URLS}/utilisateur/${id}`, utilisateur)
     .then((res) => {
       return res.data;
@@ -67,9 +68,12 @@ export function modificationUtilisateur(utilisateur, id) {
       console.error("front end error putUtilisateur", err);
     });
 }
-export function createUtilisateur(utilisateur) {
-  return axios
-    .post(`${URLS}/utilisateur`, utilisateur)
+export async function createUtilisateur(utilisateurData, file) {
+  const formData = new FormData();
+  formData.append("image", file);
+  formData.append("utilisateur", JSON.stringify(utilisateurData.utilisateur));
+  return await axios
+    .post(`${URLS}/utilisateur`, formData)
     .then((res) => {
       return res.data;
     })
