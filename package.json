@@ -41,6 +41,7 @@
     "styled-components": "^6.1.8",
     "three": "^0.161.0",
     "valtio": "^1.13.2",
+    "wave-visualizer": "^1.0.6",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
