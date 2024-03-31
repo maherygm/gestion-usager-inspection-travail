@@ -6,31 +6,12 @@ import {
   DialogContentText,
   DialogTitle,
 } from "@mui/material";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { useDispatch } from "react-redux";
 import { deleteDossier } from "../../../../../../config/redux/actions/dossier.action";
 import { toast } from "react-toastify";
 
-const DeleteFolder = ({ open, handleClose, deleteFolder, idFolder }) => {
-  const notifyWarn = (message) =>
-    toast.warn(message, {
-      position: "top-center",
-      autoClose: 3000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      draggable: true,
-      progress: undefined,
-      theme: "colored",
-    });
-  const dispatch = useDispatch();
-  function deleteF(params) {
-    dispatch(deleteDossier(idFolder + ""));
-    notifyWarn("Dossier Effacer");
-    handleClose();
-
-    console.log("deleted :", idFolder);
-  }
-
+const DeleteUser = ({ open, handleClose, handelDelete }) => {
   return (
     <div>
       <Dialog
@@ -51,7 +32,7 @@ const DeleteFolder = ({ open, handleClose, deleteFolder, idFolder }) => {
           <Button color="secondary" onClick={handleClose}>
             Annuler
           </Button>
-          <Button color="secondary" onClick={() => deleteF()} autoFocus>
+          <Button color="secondary" onClick={() => handelDelete()} autoFocus>
             Confirmer
           </Button>
         </DialogActions>
@@ -60,4 +41,4 @@ const DeleteFolder = ({ open, handleClose, deleteFolder, idFolder }) => {
   );
 };
 
-export default DeleteFolder;
+export default DeleteUser;

@@ -21,7 +21,7 @@
     align-items: center;
     justify-content: center;
     position: relative;
-
+    transition: background-color 500ms ease-in-out;
     &:hover {
       background-color: var(--primaryColor);
       color: white;
@@ -31,6 +31,7 @@
         position: relative;
         svg {
           path {
+            transition: stroke 500ms ease-in-out;
             stroke: rgb(255, 253, 253);
           }
         }

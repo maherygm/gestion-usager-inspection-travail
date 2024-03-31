@@ -10,6 +10,10 @@ const SpeechTotexte = ({ open, handleClose }) => {
       window.SpeechRecognition || window.webkitSpeechRecognition,
     recognition;
 
+  recognition = new SpeechRecognition();
+  recognition.lang = "fr-FR";
+  recognition.interimResults = true;
+
   const recordbtn = () => {
     if (!recording) {
       setResult("");
@@ -24,9 +28,9 @@ const SpeechTotexte = ({ open, handleClose }) => {
 
   function speechToText() {
     try {
-      recognition = new SpeechRecognition();
-      recognition.lang = "fr-FR";
-      recognition.interimResults = true;
+      // recognition = new SpeechRecognition();
+      // recognition.lang = "fr-FR";
+      // recognition.interimResults = true;
 
       recognition.start();
       voiceVisualizer.startVisualization();
@@ -35,7 +39,7 @@ const SpeechTotexte = ({ open, handleClose }) => {
         const speechResult = event.results[0][0].transcript;
 
         if (event.results[0].isFinal) {
-          setResult((prevResult) => prevResult + " " + speechResult);
+          setResult(result + " " + speechResult);
           // if (speechResult.toLowerCase().includes("salut.")) {
           //   isrecording(false);
           //   stopRecording();
@@ -58,7 +62,7 @@ const SpeechTotexte = ({ open, handleClose }) => {
           //   "vous voulez voir la carte ok je vais vous rediriger vers la carte"
           // );
         } else {
-          setResult((prevResult) => prevResult + " " + speechResult);
+          setResult(" " + result + " " + speechResult);
         }
       };
       recognition.onspeechend = () => {
@@ -66,10 +70,10 @@ const SpeechTotexte = ({ open, handleClose }) => {
       };
 
       recognition.onerror = (event) => {
-        isrecording(false);
-        recognition.stop();
+        // isrecording(false);
+        // recognition.stop();
         if (event.error === "no-speech") {
-          // speak("JE DETECTE PAS DES MOTS");
+          speak("JE DETECTE PAS DES MOTS");
         } else if (event.error === "audio-capture") {
           // alert(
           //   "No microphone was found. Ensure that a microphone is installed."
@@ -80,13 +84,12 @@ const SpeechTotexte = ({ open, handleClose }) => {
           // alert("Listening Stopped.");
         } else {
           // alert("Error occurred in recognition: " + event.error);
-          // speak("salut  il ya une erreur " + event.error);
+          speak("salut  il ya une erreur " + event.error);
           isrecording(false);
         }
       };
     } catch (error) {
       isrecording(false);
-
       console.log(error);
     }
   }
@@ -107,9 +110,17 @@ const SpeechTotexte = ({ open, handleClose }) => {
   function stopRecording() {
     isrecording(false);
     recognition.stop();
+    setResult("");
+    voiceVisualizer.stopVisualization();
   }
   return (
-    <Modal open={open} onClose={handleClose}>
+    <Modal
+      open={open}
+      onClose={() => {
+        handleClose();
+        stopRecording();
+      }}
+    >
       <div
         style={{
           display: "flex",

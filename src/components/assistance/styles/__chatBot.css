@@ -1,0 +1,85 @@
+.chatbot-conntent{
+  border-radius: 20px;
+}
+
+.react-chatbot-kit-chat-container {
+  position: fixed;
+  width: 300px;
+  height: 500px;
+  z-index: 10;
+  left: 10px;
+  border-radius: 15px;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+  background-color: var(--fillInput);
+  overflow: hidden;
+}
+
+.react-chatbot-kit-chat-input{
+  outline: none;
+  color: var(--darkFontColor);
+  font-family: "Poppins";
+  background-color: var(--backgroundColor);
+}
+
+.react-chatbot-kit-chat-input::placeholder{
+  color: var(--darkFontColor);
+}
+
+.react-chatbot-kit-chat-container{
+  overflow-x: none;
+}
+
+.main-container-chatbot {
+  z-index: 7;
+  position: fixed;
+  bottom: 30px;
+  left: 30px;
+  border-radius: 20px 20px 0px 0px;
+  z-index: 999;
+}
+
+
+.react-chatbot-kit-chat-message-container {
+  background-color: var(--backgroundColor);
+  overflow-y: auto;
+}
+.react-chatbot-kit-chat-bot-message {
+  background-color: var(--backgroundColor);
+}
+
+.close-chat {
+  display: none;
+}
+
+.hidden-chat .chatbot-conntent {
+  display: none;
+}
+.hidden-chat {
+  width: 100px;
+  height: 50px;
+  border-radius: 40px;
+  bottom: 30px;
+  box-shadow: 5px 7px 10px rgba(0, 0, 0, 0.2);
+}
+.iconsChat {
+  display: none;
+}
+.hidden-chat .iconsChat {
+  display: flex;
+  width: 120px;
+  height: 100%;
+  font-size: 13px;
+  border-radius: inherit;
+  background-color: var(--primaryColor);
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  padding: 2px;
+  transition: 0.4s;
+}
+
+.hidden-chat .iconsChat:hover{
+  transform: scale(1.1) rotate(-5deg);
+  box-shadow: 7px 10px 10px rgba(0, 0, 0, 0.3);
+}

@@ -1,7 +1,9 @@
 import Wave from "wave-visualizer";
 
 export default class VoiceVisualizer {
-  constructor() {}
+  constructor() {
+    this.audioStream = null; // Initialisez this.audioStream à null
+  }
 
   async openAudioStream() {
     try {
@@ -14,20 +16,41 @@ export default class VoiceVisualizer {
   }
 
   async startVisualization() {
-    await this.openAudioStream();
+    if (!this.audioStream) {
+      await this.openAudioStream();
+    }
 
-    let wave = new Wave();
+    if (this.audioStream) {
+      let wave = new Wave();
 
-    wave.fromStream(this.audioStream, "output", {
-      type: "bars",
-      colors: ["blue", "3498db"],
-      stroke: 1,
-    });
+      wave.fromStream(this.audioStream, "output", {
+        type: "bars",
+        colors: ["blue", "3498db"],
+        stroke: 1,
+      });
+    } else {
+      console.error("Audio stream is not available.");
+    }
   }
+  // async closeAudioStream() {
+  //   if (this.audioStream) {
+  //     this.audioStream.getTracks().forEach((track) => {
+  //       track.stop();
+  //     });
+  //     this.audioStream = null;
+  //   } else {
+  //     console.error("Audio stream is not available.");
+  //   }
+  // }
 
   async stopVisualization() {
-    this.audioStream.getTracks().forEach((track) => {
-      track.stop();
-    });
+    if (this.audioStream) {
+      await this.audioStream.getTracks().forEach((track) => {
+        track.stop();
+      });
+      this.audioStream = null;
+    } else {
+      console.error("Audio stream is not available.");
+    }
   }
 }

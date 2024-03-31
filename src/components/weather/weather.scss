@@ -1,0 +1,49 @@
+.weather-container {
+  width: 360px;
+  position: absolute;
+  top: 100px;
+  right: 0px;
+  animation: 1s swipeFadeUp;
+  z-index: 0;
+  color: var(--darkFontColor);
+  border-radius: 20px;
+
+  padding: 10px;
+  h1 {
+    font-size: 60px;
+    background: var(--linearColor2);
+    -webkit-background-clip: text;
+    background-clip: text;
+    font-weight: 800;
+    color: transparent;
+  }
+
+  .info {
+    .weather-location {
+      font-size: 20px;
+      font-weight: 500;
+      margin-bottom: 20px;
+    }
+  }
+
+  .weather-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+
+    .weather-temperature {
+      width: 30%;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 3px;
+
+      .temperature-value {
+        color: var(--darkFontColor);
+      }
+
+      img {
+        width: 50px;
+      }
+    }
+  }
+}

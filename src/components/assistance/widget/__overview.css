@@ -1,0 +1,10 @@
+.bots-overivew-message {
+  background-color: var(--secondaryColor);
+  padding: 5px;
+  border-radius: 10px;
+}
+
+.bots-overivew-message ul li {
+  list-style-type: none;
+  color: white;
+}
