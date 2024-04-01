@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from "react";
 import "./__cardUser.scss";
 import { CalendarMonth, Delete, Mail } from "@mui/icons-material";
-import "moment/locale/fr";
+
 import moment from "moment";
 import { IconButton } from "@mui/material";
 import { useDispatch } from "react-redux";
 import { deleteutilisateur } from "../../../../../../config/redux/actions/user.action";
 import DeleteUser from "../delete/DeleteUser";
 import { toast } from "react-toastify";
+import "moment/locale/fr";
 moment.locale("fr");
 const CardUser = ({ user }) => {
   const dispatch = useDispatch();
@@ -17,6 +18,7 @@ const CardUser = ({ user }) => {
   function handleDelete(params) {
     dispatch(deleteutilisateur(useDelete + ""));
     notifySuccess("utilisateurs supprimer !");
+    handleClose();
   }
   const [open, setOpen] = useState(false);
   function handleClose(params) {

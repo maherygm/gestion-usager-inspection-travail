@@ -5,13 +5,23 @@ export const GET_USER = "GET_USER";
 export const ADD_USER = "ADD_USER";
 export const EDIT_USER = "EDIT_USER";
 export const DELETE_USER = "DELETE_USER";
-export const LIKE_USER = "LIKE_USER";
+export const GET_ONE_USER = "GET_ONE_USER";
 
 export const getutilisateur = () => {
   return (dispatch) => {
     return axios.get(`${URLS}/utilisateur`).then((res) => {
       dispatch({
         type: GET_USER,
+        payLoad: res.data,
+      });
+    });
+  };
+};
+export const getOneutilisateur = (id) => {
+  return (dispatch) => {
+    return axios.get(`${URLS}/utilisateur/${id}`).then((res) => {
+      dispatch({
+        type: GET_ONE_USER,
         payLoad: res.data,
       });
     });
@@ -43,7 +53,7 @@ export const editutilisateur = (utilisateur) => {
       .then((res) => {
         dispatch({
           type: EDIT_USER,
-          payLoad: res.data.utilisateur,
+          payLoad: res.data.Utilisateur,
         });
       });
   };

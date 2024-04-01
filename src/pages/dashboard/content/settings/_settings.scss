@@ -1,0 +1,97 @@
+.main-admin-container {
+  color: var(--darkFontColor);
+
+  .body-admin {
+    width: 80vw;
+    height: 100vh;
+    margin: 0 auto;
+
+    .action-container {
+      display: flex;
+      gap: 20px;
+      .back-btn {
+        display: flex;
+        align-items: center;
+
+        .icons {
+          color: var(--darkFontColor);
+        }
+      }
+    }
+    .section-one {
+      .header-section {
+        display: flex;
+        justify-content: space-between;
+
+        .profil-section {
+          display: flex;
+          gap: 20px;
+        }
+        .fonction {
+          display: flex;
+          align-items: end;
+          flex-direction: column;
+          .icons {
+            color: var(--darkFontColor);
+          }
+
+          h1 {
+            text-align: end;
+          }
+        }
+      }
+      .body-section {
+        width: 80%;
+        height: 80vh;
+        padding-top: 50px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        .header-section {
+          background-color: var(--fds-alpha-40);
+          padding: 20px;
+          border-radius: 20px;
+          .avatar {
+            width: 200px;
+            height: 200px;
+          }
+
+          .User-name {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            h1 {
+              text-transform: uppercase;
+              font-size: 50px;
+            }
+            p.prenom {
+              font-size: 32px;
+              text-transform: capitalize;
+            }
+            .mail {
+              display: flex;
+              align-items: center;
+              gap: 10px;
+            }
+          }
+        }
+        .content {
+          background-color: var(--fds-alpha-40);
+
+          border-radius: 20px;
+          padding: 20px;
+          width: 50%;
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+          .date-naissance {
+            text-align: left;
+            font-size: 22px;
+          }
+        }
+      }
+    }
+  }
+}

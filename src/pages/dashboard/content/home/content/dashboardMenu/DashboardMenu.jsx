@@ -82,14 +82,14 @@ const DashboardMenu = () => {
               links={"/dashboard/management"}
             />
             <ButtonStyled
-              title={"Historiques"}
+              title={"Plainte"}
               icons={<PublishedWithChanges />}
               // sx={{
               //   backgroundColor: "#00aeef",
               // }}
               color={"var(--darkFontColor)"}
               className={"btn-aa-annimer"}
-              links={"/dashboard/historiques"}
+              links={"/dashboard/plaintes"}
             />
             <ButtonStyled
               title={"Gestion des utilisateurs"}

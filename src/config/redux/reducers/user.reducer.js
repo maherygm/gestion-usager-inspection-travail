@@ -3,6 +3,7 @@ import {
   DELETE_USER,
   EDIT_USER,
   GET_USER,
+  GET_ONE_USER,
 } from "../actions/user.action";
 
 const initialState = {};
@@ -15,6 +16,9 @@ export default function userReducer(state = initialState, action) {
       return action.payLoad;
 
     case ADD_USER:
+      return [...state, action.payLoad];
+
+    case GET_ONE_USER:
       return [...state, action.payLoad];
 
     case EDIT_USER:

@@ -57,7 +57,7 @@ const RouteConfig = () => {
           <Route path="management" element={<__Dashboard__Management__ />} />
           <Route path="settings" element={<__Dashboard__Settings__ />} />
           <Route path="admin" element={<__Dashboard__Admin__ />} />
-          <Route path="historiques" element={<__Dashboard__Historique__ />} />
+          <Route path="plaintes" element={<__Dashboard__Historique__ />} />
         </Route>
 
         {/* athentification routes */}

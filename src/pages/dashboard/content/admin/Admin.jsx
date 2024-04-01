@@ -28,7 +28,7 @@ const Admin = () => {
           <div className="header">
             <div className="action-container">
               <div className="back-btn" onClick={() => handleNavigate()}>
-                <IconButton>
+                <IconButton className="icons">
                   <ArrowLeft />
                 </IconButton>
                 <p>Retour</p>

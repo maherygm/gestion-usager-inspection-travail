@@ -25,6 +25,7 @@ import rootReducer from "./config/redux/reducers/index";
 import { getDossier } from "./config/redux/actions/dossier.action";
 import { ToastContainer } from "react-toastify";
 import { getutilisateur } from "./config/redux/actions/user.action";
+import { getPlainte } from "./config/redux/actions/plainte.action";
 
 const store = configureStore({
   reducer: rootReducer,
@@ -33,6 +34,7 @@ const store = configureStore({
 
 store.dispatch(getDossier());
 store.dispatch(getutilisateur());
+store.dispatch(getPlainte());
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 

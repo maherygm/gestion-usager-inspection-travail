@@ -1,0 +1,50 @@
+.main-about-container {
+  color: white;
+  z-index: 999;
+  position: absolute;
+  width: 100vw;
+  .body-admin {
+    width: 80vw;
+    height: 100vh;
+    margin: 0 auto;
+    z-index: 999;
+    .header {
+      .a-propos {
+        z-index: 999;
+      }
+    }
+    .action-container {
+      display: flex;
+      gap: 20px;
+      z-index: 999;
+      color: white;
+      .back-btn {
+        display: flex;
+        align-items: center;
+        z-index: 999;
+        .icons {
+          color: white;
+          z-index: 999;
+        }
+      }
+    }
+    .section-one {
+      position: absolute;
+      top: 40%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 999;
+      padding: 20px;
+      border-radius: 20px;
+
+      h1 {
+        background: var(--linearColor1);
+        background-clip: text;
+        color: transparent;
+        font-size: 36px;
+      }
+      p {
+      }
+    }
+  }
+}
