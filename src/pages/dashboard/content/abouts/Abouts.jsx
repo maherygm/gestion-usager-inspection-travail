@@ -44,6 +44,7 @@ const Abouts = () => {
                 veniam soluta dignissimos corporis dolor nesciunt ipsum, quas
                 sequi dolorem fugit. Voluptatum autem voluptatem nobis vel fuga
                 nostrum perferendis expedita doloribus assumenda esse?
+
               </p>
             </div>
           </div>

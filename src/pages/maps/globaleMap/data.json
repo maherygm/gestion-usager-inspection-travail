@@ -1,0 +1,598 @@
+{
+  "categories": [
+    {
+      "nom": "TRANSPORT",
+      "lieux": [
+        {
+          "nom": "Gare centrale",
+          "description": "La principale gare ferroviaire de Fianarantsoa",
+          "longitude": 47.09916666666667,
+          "latitude": -21.4434444
+        },
+        {
+          "nom": "COTIS",
+          "description": "Station de transport public",
+          "longitude": 47.08044444444444,
+          "latitude": -21.4566667
+        }
+      ]
+    },
+    {
+      "nom": "AIRPORT",
+      "lieux": [
+        {
+          "nom": "Aéroport de Fianarantsoa",
+          "description": "Aéroport régional de Fianarantsoa",
+          "longitude": 47.09583333333333,
+          "latitude": -21.4305556
+        }
+      ]
+    },
+    {
+      "nom": "ARRET TAXI",
+      "lieux": [
+        {
+          "nom": "Arrêt taxi Antarandolo",
+          "description": "Point de départ des taxis",
+          "longitude": 47.08516666666667,
+          "latitude": -21.4604444
+        },
+        {
+          "nom": "Arrêt taxi stationnement",
+          "description": "Stationnement principal des taxis",
+          "longitude": 47.08233333333333,
+          "latitude": -21.4582222
+        }
+      ]
+    },
+    {
+      "nom": "HOTELS",
+      "lieux": [
+        {
+          "nom": "Zomatel Hôtel",
+          "description": "Hôtel de luxe dans le centre-ville",
+          "longitude": 47.0822222,
+          "latitude": -21.4566667
+        },
+        {
+          "nom": "Hôtel Tombontsoa",
+          "description": "Hôtel abordable avec vue sur la ville",
+          "longitude": 47.0878333,
+          "latitude": -21.4542222
+        },
+        {
+          "nom": "Hôtel Zomatel",
+          "description": "Autre hôtel Zomatel dans la région",
+          "longitude": 47.0858333,
+          "latitude": -21.4594444
+        }
+      ]
+    }, 
+    {
+      "nom": "ECOLE",
+      "lieux": [
+        {
+          "nom": "Ecole Primaire Analamahitsy",
+          "description": "Ecole primaire renommée dans la région",
+          "longitude": 47.095432,
+          "latitude": -21.434567
+        },
+        {
+          "nom": "Ecole Secondaire Ambohitrinibe",
+          "description": "Ecole secondaire réputée pour ses programmes académiques",
+          "longitude": 47.079876,
+          "latitude": -21.451234
+        },
+        {
+          "nom": "Université de Fianarantsoa",
+          "description": "Importante université offrant diverses formations",
+          "longitude": 47.088765,
+          "latitude": -21.443210
+        },
+        {
+          "nom": "Ecole Primaire Analamahitsy",
+          "description": "Ecole primaire renommée dans la région",
+          "longitude": 47.095432,
+          "latitude": -21.434567
+        },
+        {
+          "nom": "Ecole Secondaire Ambohitrinibe",
+          "description": "Ecole secondaire réputée pour ses programmes académiques",
+          "longitude": 47.079876,
+          "latitude": -21.451234
+        },
+        {
+          "nom": "Université de Fianarantsoa",
+          "description": "Importante université offrant diverses formations",
+          "longitude": 47.088765,
+          "latitude": -21.443210
+        },
+        {
+          "nom": "Ecole Maternelle Antaninarenina",
+          "description": "Ecole maternelle située au cœur de la ville",
+          "longitude": 47.085432,
+          "latitude": -21.459876
+        },
+        {
+          "nom": "Ecole Technique Ambositra",
+          "description": "Ecole technique offrant des formations professionnelles",
+          "longitude": 47.093210,
+          "latitude": -21.436543
+        },
+        {
+          "nom": "Ecole Supérieure Antsirabe",
+          "description": "Ecole supérieure offrant des cours avancés",
+          "longitude": 47.080987,
+          "latitude": -21.445321
+        },
+        {
+          "nom": "Lycée Ambohibao",
+          "description": "Lycée populaire dans la région",
+          "longitude": 47.089012,
+          "latitude": -21.452109
+        },
+        {
+          "nom": "Collège Antsirabe",
+          "description": "Collège avec une excellente réputation académique",
+          "longitude": 47.084567,
+          "latitude": -21.448765
+        },
+        {
+          "nom": "Ecole Internationale Ankazobe",
+          "description": "Ecole internationale offrant un programme multiculturel",
+          "longitude": 47.092345,
+          "latitude": -21.440987
+        },
+        {
+          "nom": "Ecole d'Arts et Métiers Morondava",
+          "description": "Ecole spécialisée dans les arts et métiers",
+          "longitude": 47.088765,
+          "latitude": -21.437890
+        },
+        {
+          "nom": "Ecole de Commerce Majunga",
+          "description": "Ecole de commerce renommée pour ses programmes",
+          "longitude": 47.082109,
+          "latitude": -21.442345
+        },
+        {
+          "nom": "Ecole de Sciences Toliara",
+          "description": "Ecole spécialisée dans les sciences et technologies",
+          "longitude": 47.086543,
+          "latitude": -21.447654
+        }
+      ]
+    },
+    {
+      "nom": "HOPITALS",
+      "lieux": [
+        {
+          "nom": "Centre Hospitalier Universitaire de Fianarantsoa",
+          "description": "Principal centre hospitalier de la ville",
+          "longitude": 47.090123,
+          "latitude": -21.446789
+        },
+        {
+          "nom": "Hôpital Saint-Joseph",
+          "description": "Hôpital catholique offrant des soins de qualité",
+          "longitude": 47.084567,
+          "latitude": -21.450987
+        },
+        {
+          "nom": "Clinique Docteur Rakotomalala",
+          "description": "Clinique privée spécialisée dans diverses spécialités",
+          "longitude": 47.087654,
+          "latitude": -21.445321
+        },
+        {
+          "nom": "Hôpital Militaire de Fianarantsoa",
+          "description": "Hôpital géré par les forces armées",
+          "longitude": 47.091234,
+          "latitude": -21.449876
+        },
+        {
+          "nom": "Hôpital pour Enfants Razafindrakoto",
+          "description": "Hôpital spécialisé pour les soins pédiatriques",
+          "longitude": 47.093210,
+          "latitude": -21.443210
+        }
+      ]
+    },
+    {
+      "nom": "KIOSQUE",
+      "lieux": [
+        {
+          "nom": "Kiosque MVola Analamahitsy",
+          "description": "Service MVola dans le quartier Analamahitsy",
+          "longitude": 47.088765,
+          "latitude": -21.453210
+        },
+        {
+          "nom": "Kiosque Orange Money Ambohitrinibe",
+          "description": "Service Orange Money près du quartier Ambohitrinibe",
+          "longitude": 47.079876,
+          "latitude": -21.459876
+        },
+        {
+          "nom": "Kiosque Airtel Money Antaninarenina",
+          "description": "Service Airtel Money au cœur de la ville",
+          "longitude": 47.085432,
+          "latitude": -21.457654
+        },
+        {
+          "nom": "Kiosque MVola Ambohibao",
+          "description": "Service MVola dans le quartier Ambohibao",
+          "longitude": 47.091234,
+          "latitude": -21.451234
+        },
+        {
+          "nom": "Kiosque Orange Money Ambositra",
+          "description": "Service Orange Money près du quartier Ambositra",
+          "longitude": 47.084567,
+          "latitude": -21.460987
+        }
+      ]
+    },
+    {
+      "nom": "PHARMACIE",
+      "lieux": [
+        {
+          "nom": "Pharmacie Centrale",
+          "description": "Pharmacie privée offrant une large gamme de médicaments",
+          "longitude": 47.085432,
+          "latitude": -21.456789
+        },
+        {
+          "nom": "Pharmacie de Garde Ambohitrinibe",
+          "description": "Pharmacie de garde ouverte 24h/24",
+          "longitude": 47.080987,
+          "latitude": -21.459876
+        },
+        {
+          "nom": "Pharmacie du Centre-Ville",
+          "description": "Pharmacie classique avec des médicaments courants",
+          "longitude": 47.088765,
+          "latitude": -21.450987
+        },
+        {
+          "nom": "Pharmacie Privée Ankazobe",
+          "description": "Pharmacie privée offrant des services personnalisés",
+          "longitude": 47.093210,
+          "latitude": -21.453210
+        },
+        {
+          "nom": "Pharmacie Simple Morondava",
+          "description": "Pharmacie standard avec des médicaments de base",
+          "longitude": 47.082109,
+          "latitude": -21.454321
+        },
+        {
+          "nom": "Pharmacie de Garde Ambositra",
+          "description": "Pharmacie de garde ouverte 24h/24",
+          "longitude": 47.084567,
+          "latitude": -21.458765
+        },
+        {
+          "nom": "Pharmacie du Quartier Analamahitsy",
+          "description": "Pharmacie située dans le quartier Analamahitsy",
+          "longitude": 47.089012,
+          "latitude": -21.456789
+        }
+      ]
+    },
+    {
+      "nom": "POMPIER",
+      "lieux": [
+        {
+          "nom": "Service de Pompiers Fianarantsoa",
+          "description": "Service de pompiers pour les interventions d'urgence",
+          "longitude": 47.086543,
+          "latitude": -21.458765
+        }
+      ]
+    },
+    {
+      "nom": "RESTAURENT",
+      "lieux": [
+        {
+          "nom": "Le Bon Goût",
+          "description": "Restaurant offrant une cuisine traditionnelle malgache",
+          "longitude": 47.089876,
+          "latitude": -21.453210
+        },
+        {
+          "nom": "La Terrasse",
+          "description": "Restaurant avec une vue panoramique sur la ville",
+          "longitude": 47.082345,
+          "latitude": -21.459876
+        },
+        {
+          "nom": "Chez Michel",
+          "description": "Restaurant familial proposant des plats locaux",
+          "longitude": 47.087654,
+          "latitude": -21.457890
+        },
+        {
+          "nom": "Au Rendez-vous",
+          "description": "Restaurant de cuisine fusion avec des influences internationales",
+          "longitude": 47.084567,
+          "latitude": -21.460987
+        },
+        {
+          "nom": "Le Petit Bistrot",
+          "description": "Bistrot avec des plats rapides et délicieux",
+          "longitude": 47.086543,
+          "latitude": -21.458765
+        },
+        {
+          "nom": "Le Plaisir Gourmand",
+          "description": "Restaurant gastronomique pour les occasions spéciales",
+          "longitude": 47.090123,
+          "latitude": -21.455432
+        },
+        {
+          "nom": "L'Oasis",
+          "description": "Restaurant avec un jardin et une ambiance détendue",
+          "longitude": 47.083210,
+          "latitude": -21.458765
+        },
+        {
+          "nom": "Le Coin des Saveurs",
+          "description": "Restaurant avec une variété de plats locaux et internationaux",
+          "longitude": 47.085432,
+          "latitude": -21.456789
+        },
+        {
+          "nom": "La Perle de l'Orient",
+          "description": "Restaurant proposant une cuisine asiatique",
+          "longitude": 47.088765,
+          "latitude": -21.454321
+        },
+        {
+          "nom": "La Crêperie",
+          "description": "Crêperie offrant des crêpes sucrées et salées",
+          "longitude": 47.089876,
+          "latitude": -21.452109
+        },
+        {
+          "nom": "Le Rustique",
+          "description": "Restaurant rustique avec des plats traditionnels",
+          "longitude": 47.083210,
+          "latitude": -21.457654
+        },
+        {
+          "nom": "Chez André",
+          "description": "Restaurant convivial proposant une cuisine maison",
+          "longitude": 47.086543,
+          "latitude": -21.455678
+        },
+        {
+          "nom": "Le Délice du Chef",
+          "description": "Restaurant avec des plats créatifs du chef",
+          "longitude": 47.088765,
+          "latitude": -21.453210
+        },
+        {
+          "nom": "Le Gourmet",
+          "description": "Restaurant haut de gamme avec une carte raffinée",
+          "longitude": 47.090123,
+          "latitude": -21.450987
+        }
+      ]
+    },
+    {
+      "nom": "BOUTIQUE",
+      "lieux": [
+        {
+          "nom": "Boutique Chic",
+          "description": "Boutique de mode proposant des vêtements élégants",
+          "longitude": 47.088765,
+          "latitude": -21.453210
+        },
+        {
+          "nom": "Boutique de Luxe",
+          "description": "Boutique haut de gamme avec des produits de luxe",
+          "longitude": 47.085432,
+          "latitude": -21.457654
+        },
+        {
+          "nom": "Boutique Cosmétique",
+          "description": "Boutique spécialisée dans les produits de beauté",
+          "longitude": 47.090123,
+          "latitude": -21.452109
+        },
+        {
+          "nom": "Boutique Artisanale",
+          "description": "Boutique proposant des articles artisanaux locaux",
+          "longitude": 47.084567,
+          "latitude": -21.460987
+        },
+        {
+          "nom": "Boutique de Jouets",
+          "description": "Boutique offrant une variété de jouets pour enfants",
+          "longitude": 47.086543,
+          "latitude": -21.458765
+        },
+        {
+          "nom": "Boutique Électronique",
+          "description": "Boutique spécialisée dans les appareils électroniques",
+          "longitude": 47.087654,
+          "latitude": -21.456789
+        },
+        {
+          "nom": "Boutique Vintage",
+          "description": "Boutique proposant des articles vintages et rétro",
+          "longitude": 47.083210,
+          "latitude": -21.457890
+        },
+        {
+          "nom": "Boutique de Décoration",
+          "description": "Boutique offrant des articles de décoration pour la maison",
+          "longitude": 47.089876,
+          "latitude": -21.455432
+        },
+        {
+          "nom": "Boutique Accessoires",
+          "description": "Boutique proposant une variété d'accessoires de mode",
+          "longitude": 47.088765,
+          "latitude": -21.454321
+        },
+        {
+          "nom": "Boutique pour Animaux",
+          "description": "Boutique proposant des produits pour animaux de compagnie",
+          "longitude": 47.087654,
+          "latitude": -21.456789
+        }
+      ]
+    },
+    {
+      "nom": "STATION SERVICE",
+      "lieux": [
+        {
+          "nom": "Station JOVENA Analamahitsy",
+          "description": "Station-service JOVENA dans le quartier Analamahitsy",
+          "longitude": 47.087654,
+          "latitude": -21.456789
+        },
+        {
+          "nom": "Station GALANA Ambositra",
+          "description": "Station-service GALANA près du quartier Ambositra",
+          "longitude": 47.085432,
+          "latitude": -21.457654
+        },
+        {
+          "nom": "Station SHELL Ambohitrinibe",
+          "description": "Station-service SHELL près du quartier Ambohitrinibe",
+          "longitude": 47.089876,
+          "latitude": -21.455432
+        },
+        {
+          "nom": "Station TOTAL Ankazobe",
+          "description": "Station-service TOTAL à Ankazobe",
+          "longitude": 47.088765,
+          "latitude": -21.454321
+        },
+        {
+          "nom": "Station JOVENA Antaninarenina",
+          "description": "Station-service JOVENA à Antaninarenina",
+          "longitude": 47.090123,
+          "latitude": -21.453210
+        },
+        {
+          "nom": "Station GALANA Ambalavao",
+          "description": "Station-service GALANA à Ambalavao",
+          "longitude": 47.084567,
+          "latitude": -21.460987
+        },
+        {
+          "nom": "Station SHELL Ambohibao",
+          "description": "Station-service SHELL à Ambohibao",
+          "longitude": 47.086543,
+          "latitude": -21.458765
+        },
+        {
+          "nom": "Station TOTAL Ambatofotsy",
+          "description": "Station-service TOTAL à Ambatofotsy",
+          "longitude": 47.087654,
+          "latitude": -21.456789
+        },
+        {
+          "nom": "Station JOVENA Ambalavao",
+          "description": "Station-service JOVENA à Ambalavao",
+          "longitude": 47.083210,
+          "latitude": -21.457890
+        },
+        {
+          "nom": "Station GALANA Ambositra",
+          "description": "Station-service GALANA à Ambositra",
+          "longitude": 47.089876,
+          "latitude": -21.455432
+        },
+        {
+          "nom": "Station SHELL Ambohibao",
+          "description": "Station-service SHELL à Ambohibao",
+          "longitude": 47.088765,
+          "latitude": -21.454321
+        },
+        {
+          "nom": "Station TOTAL Ambatofotsy",
+          "description": "Station-service TOTAL à Ambatofotsy",
+          "longitude": 47.087654,
+          "latitude": -21.456789
+        },
+        {
+          "nom": "Station JOVENA Analamahitsy",
+          "description": "Station-service JOVENA dans le quartier Analamahitsy",
+          "longitude": 47.085432,
+          "latitude": -21.457654
+        },
+        {
+          "nom": "Station GALANA Ambohitrinibe",
+          "description": "Station-service GALANA près du quartier Ambohitrinibe",
+          "longitude": 47.089876,
+          "latitude": -21.455432
+        },
+        {
+          "nom": "Station SHELL Ambohibao",
+          "description": "Station-service SHELL à Ambohibao",
+          "longitude": 47.088765,
+          "latitude": -21.454321
+        },
+        {
+          "nom": "Station TOTAL Ambatofotsy",
+          "description": "Station-service TOTAL à Ambatofotsy",
+          "longitude": 47.087654,
+          "latitude": -21.456789
+        },
+        {
+          "nom": "Station JOVENA Analamahitsy",
+          "description": "Station-service JOVENA dans le quartier Analamahitsy",
+          "longitude": 47.085432,
+          "latitude": -21.457654
+        },
+        {
+          "nom": "Station GALANA Ambositra",
+          "description": "Station-service GALANA à Ambositra",
+          "longitude": 47.089876,
+          "latitude": -21.455432
+        }
+      ]
+    },
+    {
+      "nom": "TOILETTE PUBLIQUE",
+      "lieux": [
+        {
+          "nom": "Toilettes Place de l'Indépendance",
+          "description": "Toilettes publiques situées à la Place de l'Indépendance",
+          "longitude": 47.088765,
+          "latitude": -21.453210
+        },
+        {
+          "nom": "Toilettes Parc de la Liberté",
+          "description": "Toilettes publiques disponibles au Parc de la Liberté",
+          "longitude": 47.085432,
+          "latitude": -21.457654
+        },
+        {
+          "nom": "Toilettes Centre-ville",
+          "description": "Toilettes publiques dans le centre-ville de Fianarantsoa",
+          "longitude": 47.089876,
+          "latitude": -21.455432
+        },
+        {
+          "nom": "Toilettes Quartier Ankatso",
+          "description": "Toilettes publiques dans le quartier Ankatso",
+          "longitude": 47.087654,
+          "latitude": -21.456789
+        },
+        {
+          "nom": "Toilettes Zone Marché",
+          "description": "Toilettes publiques proches de la zone du marché",
+          "longitude": 47.086543,
+          "latitude": -21.458765
+        }
+      ]
+    }
+
+  ]
+}

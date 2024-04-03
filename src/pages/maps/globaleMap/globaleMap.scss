@@ -1,0 +1,71 @@
+.global-map{
+    background-color: var(--backgroundColor);
+    height: 100vh;
+    z-index: 4;
+}
+
+.float-info{
+    width: 500px;
+    position: absolute;
+    border-radius: 0px 0px 20px 20px;
+    top: 0px;
+    left: 100px;
+    height: 80vh;
+    display: flex;
+    overflow-y: auto;
+    flex-direction: column;
+    padding: 20px 30px;
+    background-color: var(--fillInput);
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+
+    .legend{
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+
+        span{
+            font-size: 14px;
+            color: var(--darkFontColor);
+        }
+
+        img{
+            margin-right: 12px;
+        }
+    }
+
+    h1{
+        color: var(--darkFontColor);
+    }
+
+    .btn-categ{
+        background-color: var(--darkColorTransparent);
+        border-radius: 20px;
+        padding: 10px 20px;
+        display: flex;
+        align-items: center;
+    }
+}
+
+
+.btn-categ{
+    padding: 20px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.popup-map{
+    button{
+        padding: 10px 20px;
+        border-radius: 20px;
+        background-color: var(--primaryColor);
+        color: #fff;
+        margin-right: 10px;
+        transition: 0.3s ease;
+        cursor: pointer;
+
+        &:hover{
+            transform: scale(1.1);
+        }
+    }
+}

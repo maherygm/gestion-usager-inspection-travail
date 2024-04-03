@@ -1,0 +1,30 @@
+.vr-container{
+    button{
+        position: absolute;
+        top: 40px;
+        right: 30px;
+        z-index: 20;
+        height: 20px;
+        padding: 10px;
+        background-color: var(--darkColorTransparent);
+        color: #fff;
+    }
+
+    .backMap{
+        position: absolute;
+        top: 10px;
+        left: 30px;
+        border-radius: 30px;
+        width: 100px;
+        padding: 10px 20px;
+        background-color: var(--primaryColor);
+        text-align: center;
+        color: #fff;
+        transition: 0.3s ease;
+        cursor: pointer;
+
+        &:hover{
+            transform: scale(1.1);
+        }
+    }
+}
