@@ -28,8 +28,8 @@ const Abouts = () => {
             <h1 className="a-propos">A propos </h1>
             <div className="section-one">
               <h1>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                Eligendi, accusantium?
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Eligendi nihil cupiditate et exercitationem porro minima quas
               </h1>
               <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem
@@ -44,7 +44,6 @@ const Abouts = () => {
                 veniam soluta dignissimos corporis dolor nesciunt ipsum, quas
                 sequi dolorem fugit. Voluptatum autem voluptatem nobis vel fuga
                 nostrum perferendis expedita doloribus assumenda esse?
-
               </p>
             </div>
           </div>
