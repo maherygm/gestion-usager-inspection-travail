@@ -1,3 +1,4 @@
+import moment from "moment";
 import React from "react";
 import ReactApexChart from "react-apexcharts";
 
@@ -18,37 +19,80 @@ const generateData = (count, yrange) => {
   return series;
 };
 
-const HeatMap = () => {
+
+
+const HeatMap = ({ data }) => {
+
+  const generateData2 = () => {
+
+    const weekDayCounts = {}
+    const fourWeekAgo = moment().subtract(4, 'weeks');
+
+    data.forEach((item) => {
+
+      const date = moment(item.dossier.date);
+      if (date.isAfter(fourWeekAgo)) {
+        const week = date.isoWeek();
+        const day = date.isoWeekday();
+
+        if (!weekDayCounts[week]) {
+          weekDayCounts[week] = Array(7).fill(0);
+        }
+
+        weekDayCounts[week][day - 1]++;
+      }
+
+    })
+
+
+    const series = Object.keys(weekDayCounts).map((week) => {
+      return {
+        name: `Semmaine ${week}`,
+        data: weekDayCounts[week].map((count, day) => {
+          return {
+            x: `Jour ${day + 1}`,
+            y: count,
+          };
+        })
+      }
+    })
+
+    return series;
+  }
+
   const seriesData = [
     {
-      name: "Metric1",
+      name: "Semaine 1",
       data: generateData(18, {
         min: 0,
         max: 90,
       }),
     },
     {
-      name: "Metric2",
+      name: "Semaine 2",
       data: generateData(18, {
         min: 0,
         max: 90,
       }),
     },
     {
-      name: "Metric3",
+      name: "Semaine 3",
       data: generateData(18, {
         min: 0,
         max: 90,
       }),
     },
     {
-      name: "Metric4",
+      name: "Semaine 4",
       data: generateData(18, {
         min: 0,
         max: 90,
       }),
     },
   ];
+
+  const series = generateData2();
+
 
   const optionsData = {
     chart: {
@@ -60,14 +104,26 @@ const HeatMap = () => {
     },
     colors: ["#9034ff"],
     title: {
-      text: "Daclaration",
+      text: "Dossiers Heatmap par Semaine et jour (4 dernier semaines)",
     },
+    xaxis: {
+      types: 'category',
+      title: {
+        text: "Jour de la semaine"
+      }
+    },
+    yaxis: {
+      types: 'category',
+      title: {
+        text: "semaine de l'année"
+      }
+    }
   };
 
   return (
     <ReactApexChart
       options={optionsData}
-      series={seriesData}
+      series={series}
       type="heatmap"
       height={250}
     />

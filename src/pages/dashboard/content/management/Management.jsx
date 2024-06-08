@@ -1,32 +1,34 @@
-import React, { useState } from "react";
-import "./__management.scss";
-import Profile from "../../layout/profile/Profile";
-import ColorButtonText from "../../../../components/ui/materialUibutton/ColorButtonText";
-import ColorButtonContained from "../../../../components/ui/materialUibutton/ColorButtonContained";
 import {
   Delete,
   Edit,
   FilterList,
   KeyboardArrowLeft,
   Search,
-  Visibility,
+  Visibility
 } from "@mui/icons-material";
 import { Avatar, Button, IconButton } from "@mui/material";
+import React, { useState } from "react";
+import { FaFileWord } from "react-icons/fa6";
+import { MdPictureAsPdf } from "react-icons/md";
+import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import ColorButtonContained from "../../../../components/ui/materialUibutton/ColorButtonContained";
+import ColorButtonText from "../../../../components/ui/materialUibutton/ColorButtonText";
 import SimpleButtonText from "../../../../components/ui/materialUibutton/SimpleButtonText";
-import DialogAddNewFolder from "./content/dialog/DialogAddFolder";
-import Details from "./content/details/Details";
+import Profile from "../../layout/profile/Profile";
+import "./__management.scss";
 import DeleteFolder from "./content/delete/DeleteFolder";
-import { useDispatch, useSelector } from "react-redux";
-import moment from "moment";
+import Details from "./content/details/Details";
+import DialogAddNewFolder from "./content/dialog/DialogAddFolder";
 
+import moment from "moment";
+import "moment/locale/fr";
+import { FaFileExcel } from "react-icons/fa6";
+import { toast } from "react-toastify";
+import { exportExcel, exportPDF, exportWord } from "../../../../hooks/exportData";
 import { stringAvatar } from "../../../../hooks/useColorGenerate";
 import { createUsager } from "../../../../services/backend/usagerService";
-import { toast } from "react-toastify";
-import { deleteDossier } from "../../../../config/redux/actions/dossier.action";
 import EditFolder from "./content/editFolder/EditFolder";
-
-import "moment/locale/fr";
 moment.locale("fr");
 
 const Management = () => {
@@ -57,6 +59,7 @@ const Management = () => {
     setOpenDetails(true);
     setdetails(params);
   }
+
   const [details, setdetails] = useState({
     dossier: {
       usager: {
@@ -166,13 +169,39 @@ const Management = () => {
     __v: 0,
   });
 
-  function deleteFolder(params) {}
+  function deleteFolder(params) { }
   const [idFolder, setId] = useState(null);
 
   const [openEdit, setOpenEdit] = useState(false);
   function handleCloseEdit(params) {
     setOpenEdit(false);
   }
+
+
+  function handleExportToExcel() {
+    exportExcel(dossiers);
+
+  }
+  function handleExportToPdf() {
+    exportPDF(dossiers);
+
+  }
+  function handleExportToWord() {
+    exportWord(dossiers);
+
+  }
+
+  const [searchTerm, setSearchTerm] = useState("");
+  const [search, setSearch] = useState(false);
+  const handleSearchChange = (event) => {
+    setSearch(true);
+    setSearchTerm(event.target.value);
+  };
+  const filteredDossiers = dossiers.filter(el =>
+    el.dossier.usager.nom.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    el.dossier.usager.prenom.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    el.dossier.description.toLowerCase().includes(searchTerm.toLowerCase())
+  );
 
   return (
     <div className="main-container-management">
@@ -291,7 +320,24 @@ const Management = () => {
           </h3>
           <div className="add-action">
             <h1>Administration Des dossiers</h1>
+            <div className="btn-export">
+              <ColorButtonText className="btn" onClick={() =>
+                handleExportToPdf()
+              }>
+                <MdPictureAsPdf className="pdf" />
+                <p> Exporter Pdf</p>
+              </ColorButtonText>
+              <ColorButtonText className="btn" onClick={() => handleExportToExcel()}>
+                <FaFileExcel className="excel" />
+                <p> Exporter Excel</p>
+              </ColorButtonText>
+              <ColorButtonText className="btn" onClick={() => handleExportToWord()}>
+                <FaFileWord className="word" />
+                <p> Exporter Word</p>
+              </ColorButtonText>
+            </div>
             <div className="button-container">
+
               <ColorButtonText onClick={() => setopenAdd(true)}>
                 Nouveau dossier
               </ColorButtonText>
@@ -306,8 +352,8 @@ const Management = () => {
         <div className="search-container">
           <h2>Listes des dossiers</h2>
           <div className="search">
-            <input type="text" placeholder="recherche" />
-            <ColorButtonContained>
+            <input type="text" onChange={handleSearchChange} placeholder="recherche" />
+            <ColorButtonContained >
               <Search />
             </ColorButtonContained>
             <ColorButtonContained>
@@ -332,15 +378,15 @@ const Management = () => {
                 </tr>
               </thead>
               <tbody className="body-list">
-                {dossiers.map((el, index) => (
+                {(search ? [...filteredDossiers] : [...dossiers]).reverse().map((el, index) => (
                   <tr key={index}>
                     <td onClick={() => handleOpenDetails(el)}>
                       {
                         <Avatar
                           {...stringAvatar(
                             el.dossier.usager.nom +
-                              " " +
-                              el.dossier.usager.prenom
+                            " " +
+                            el.dossier.usager.prenom
                           )}
                         />
                       }

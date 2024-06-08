@@ -8,49 +8,45 @@ import { NorthEast } from "@mui/icons-material";
 const Activitie = () => {
   const cardcontent = [
     {
-      headerContent:
-        "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Null necessitatibus molestiae eaque cumque inventore corpori facere iste optio sequi fugit.",
+      headerContent: "Engagement a un contrat de travail",
       cardData: {
-        titleCard: "Usager",
-        contentCard: "Lorem ipsum dolor sit amet.",
+        titleCard: "Contrat",
+        contentCard: "Regulariser votre contrat",
         Image: img1,
       },
       footterCard: {
         contentCard:
-          "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nulla necessitatibus molestiae eaque cumque inventore corporis facere iste optio sequi fugit.",
+          "Enregister votre contrat de travail  aupres de chez nous a fin de regulariser votre entreprise",
       },
     },
     {
-      headerContent:
-        "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Null necessitatibus molestiae eaque cumque inventore corpori facere iste optio sequi fugit.",
+      headerContent: "Reglement Interieur",
       cardData: {
-        titleCard: "Usager",
-        contentCard: "Lorem ipsum dolor sit amet.",
+        titleCard: "Reglement Interieur",
+        contentCard: "Regulariser votre entreprise",
         Image: img1,
       },
       footterCard: {
         contentCard:
-          "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nulla necessitatibus molestiae eaque cumque inventore corporis facere iste optio sequi fugit.",
+          "Il est imporant de faire un Reglement Interieur , Veuiller vous engager A le faire chaque année",
       },
     },
     {
-      headerContent:
-        "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Null necessitatibus molestiae eaque cumque inventore corpori facere iste optio sequi fugit.",
+      headerContent: "Differend",
       cardData: {
-        titleCard: "Usager",
-        contentCard: "Lorem ipsum dolor sit amet.",
+        titleCard: "Differend",
+        contentCard: "Reglement des differends",
         Image: img1,
       },
       footterCard: {
-        contentCard:
-          "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nulla necessitatibus molestiae eaque cumque inventore corporis facere iste optio sequi fugit.",
+        contentCard: "Nous sommes la pour vous aider sur ce",
       },
     },
   ];
   return (
     <div className="activitie-super-container">
       <div className="activitie-title">
-        <h1>Different destinations</h1>
+        <h1>Nos Services</h1>
       </div>
       <div className="list">
         {cardcontent.map((ctn, index) => (
@@ -73,7 +69,7 @@ const Activitie = () => {
       </div>
       <div className="button-caontainer">
         <ButtonAnnimate
-          title={"And more than 50 other destinations"}
+          title={"Regulariser vous aupres de l'etats"}
           component={<NorthEast />}
         />
       </div>

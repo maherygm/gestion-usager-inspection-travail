@@ -123,9 +123,30 @@
           color: var(--darkFontColor);
         }
       }
+      .btn-export {
+        display: flex;
+        gap: 10px;
+
+        .btn {
+          display: flex;
+          gap: 3px;
+          align-items: center;
+        }
+
+        .pdf {
+          color: red;
+        }
+        .excel {
+          color: green;
+        }
+        .word {
+          color: blue;
+        }
+      }
       .button-container {
         display: flex;
         gap: 10px;
+        justify-content: space-between;
       }
 
       .add-action {

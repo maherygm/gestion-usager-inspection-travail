@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import { Outlet } from "react-router-dom";
-import "./__index.scss";
 import SpeechTotexte from "../../components/speechtotexte/SpeechTotexte";
-import Weather from "../../components/weather/weather";
+import "./__index.scss";
 const Index = () => {
   const [open, setOpen] = useState(false);
   function handleClose(params) {

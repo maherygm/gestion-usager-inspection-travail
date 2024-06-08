@@ -11,16 +11,16 @@ const NavBar = () => {
       </div>
       <div className="main-navigation">
         <ul>
-          <li>Home </li>
-          <li>Feature </li>
-          <li>Pricing </li>
-          <li>Testimonials </li>
+          <li>Principale </li>
+          <li>No Services </li>
+          <li>A propos </li>
+          <li>Contact </li>
         </ul>
       </div>
       <div className="action-containner">
         <SwitchMode />
         <NavLink to={"/sign/signin"}>
-          <ButtonAnnimate title={"sign In"} />
+          <ButtonAnnimate title={"connection"} />
         </NavLink>
       </div>
     </div>

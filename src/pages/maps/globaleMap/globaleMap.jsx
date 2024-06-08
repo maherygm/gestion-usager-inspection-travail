@@ -39,8 +39,6 @@ function GlobaleMap() {
     setSelectedCategory(categoryName);
   };
 
-  
-
   const hotelsIcon = new Icon({
     iconUrl : hotels,
     iconSize: [38, 38]

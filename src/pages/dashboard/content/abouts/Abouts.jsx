@@ -1,9 +1,9 @@
 import { ArrowLeft } from "@mui/icons-material";
 import { IconButton } from "@mui/material";
 import React from "react";
-import Profile from "../../layout/profile/Profile";
 import { useNavigate } from "react-router-dom";
 import Particules from "../../../../components/Particules";
+import Profile from "../../layout/profile/Profile";
 import "./_about.scss";
 const Abouts = () => {
   const navigate = useNavigate();
@@ -28,22 +28,10 @@ const Abouts = () => {
             <h1 className="a-propos">A propos </h1>
             <div className="section-one">
               <h1>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Eligendi nihil cupiditate et exercitationem porro minima quas
+                Inspection du Travail : Garant de l'Equite et de la Securite au Travail
               </h1>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem
-                voluptates obcaecati laborum vel, facere dicta soluta
-                praesentium eligendi veniam? Aliquid animi odit aspernatur
-                culpa. Quia aperiam impedit eaque ex nemo voluptatibus nam ipsa
-                in, amet illo? Quis ex earum tempora quaerat excepturi, minima
-                dolores assumenda deserunt eius, officia repellat totam modi
-                magni unde nisi maiores eum nobis? Porro, placeat doloribus
-                molestiae quia aspernatur ad ipsa ea aut eos incidunt vel
-                deserunt, quae vero! Corrupti necessitatibus voluptates aperiam,
-                veniam soluta dignissimos corporis dolor nesciunt ipsum, quas
-                sequi dolorem fugit. Voluptatum autem voluptatem nobis vel fuga
-                nostrum perferendis expedita doloribus assumenda esse?
+                L'Inspection du Travail est une institution essentielle qui veille au respect des droits des travailleurs et à l'application des lois du travail. Son rôle principal est de garantir des conditions de travail justes, sûres et équitables pour tous les employés. Les inspecteurs du travail interviennent pour s'assurer que les entreprises respectent les normes en matière de santé, de sécurité et de conditions de travail. Ils jouent également un rôle crucial dans la médiation des conflits entre employeurs et employés, aidant à résoudre les différends et à promouvoir un environnement de travail harmonieux. En sensibilisant et en éduquant les employeurs et les employés sur leurs droits et obligations, l'Inspection du Travail contribue à améliorer la qualité de vie professionnelle et à renforcer la justice sociale au sein de la société.
               </p>
             </div>
           </div>

@@ -117,6 +117,15 @@
                   background-color: var(--primaryColor);
                 }
               }
+
+              .blc.blc-3-chart-three {
+                border-radius: 20px;
+                width: 25%;
+                height: 20%;
+                background-color: rgb(205, 216, 55);
+
+                min-height: 10%;
+              }
             }
           }
         }
@@ -149,9 +158,10 @@
             height: 30%;
             flex-direction: column;
             p {
-              text-align: center;
+              text-align: left;
             }
             .asignation {
+              padding: 0.625rem;
               width: 100%;
               height: 100%;
               background-color: rgba(0, 0, 0, 0.05);

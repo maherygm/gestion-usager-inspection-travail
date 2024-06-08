@@ -1,15 +1,15 @@
-import React, { useEffect, useRef, useState } from "react";
-import Lottie from "lottie-react";
-import "bulma/css/bulma.min.css";
-import "./__signIn.scss";
-import groovyWalkAnimation from "../../../assets/lotties/walk.json";
 import { ArrowBack, Lock, Person } from "@mui/icons-material";
+import "bulma/css/bulma.min.css";
+import Lottie from "lottie-react";
+import React, { useEffect, useRef, useState } from "react";
+import groovyWalkAnimation from "../../../assets/lotties/walk.json";
+import "./__signIn.scss";
 
-import ButtonAnnimate from "../../../components/ui/button/ButtonAnnimate";
-import { NavLink, useNavigate } from "react-router-dom";
 import { IconButton } from "@mui/material";
+import { NavLink, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+import ButtonAnnimate from "../../../components/ui/button/ButtonAnnimate";
 import { authentification } from "../../../services/backend/utilisateurService";
-import { ToastContainer, toast } from "react-toastify";
 
 const SignIn = () => {
   const lotieRef = useRef();
@@ -87,14 +87,12 @@ const SignIn = () => {
       <div className="section-sign-in-pages">
         <div className="section section-1">
           <form>
-            <p>Visual |space</p>
+            <p>INSPECTION DE |TRAVAIL</p>
             <h2>
-              Over 30 Million <br /> Shaping the perfect space
+              Beaucoup de Personne <br /> Nous avait deja fait confiance
             </h2>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt
-              tempora impedit laboriosam accusantium vel sint ipsum dignissimos
-              sed suscipit magni?
+              Veuillez entrez les information de connection
             </p>
 
             <div className="field ">
@@ -157,9 +155,9 @@ const SignIn = () => {
               <ButtonAnnimate onClick={handleSumbit} title={"Connection"} />
             </div>
             <div className="fotter-sign">
-              <p> No account Yet ? </p>
+              <p> Pas de compte ? </p>
               <NavLink to={"/sign/signup"}>
-                <p> Registered</p>
+                <p> Inscriver vous ici</p>
               </NavLink>
             </div>
           </form>

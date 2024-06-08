@@ -47,23 +47,20 @@ const Banner = () => {
       <div className="second-containner">
         <div className="title-banner">
           <h1 className="title-annimation-banner">
-            UnLeash the Full potential of AI
+            Ne Vous Inquieter Plus On est la Pour Vous Aider
           </h1>
           <p className="title-annimation-banner">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas
-            maiores, possimus debitis commodi esse laboriosam ullam labore culpa
-            doloremque at nesciunt reprehenderit molestias quia tempore!
-            Assumenda explicabo facere mollitia asperiores. Assumenda debitis
-            nisi aperiam odit animi optio recusandae asperiores ad.
+            Regulariser votre contrat de travail , votre entreprise aupres de
+            nous
           </p>
 
           <div className="action-containner title-annimation-banner">
             <ButtonAnnimate
-              title={"Get the App"}
+              title={"Avoir l'app"}
               component={<ArrowForward />}
             />
 
-            <h5>More</h5>
+            <h5>Plus</h5>
           </div>
         </div>
         <div className="model-container">
